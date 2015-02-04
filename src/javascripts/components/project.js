@@ -4,7 +4,7 @@ var Link = require('./link');
 var Screenshot = React.createClass({
     render: function () {
         return (
-            <a className="lightwindow" href={ this.props.url } rel={ slugify(this.props.client) } title={ this.props.title }>
+            <a className="project--sceenshots-shot lightwindow" href={ this.props.url } rel={ slugify(this.props.client) } title={ this.props.title }>
                 Screenshots
             </a>
         );
