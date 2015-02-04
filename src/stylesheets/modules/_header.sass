@@ -1,0 +1,30 @@
+#header
+    @extend %content-box
+    height: 247px
+    text-align: center
+
+.no-svg
+    #logo
+        display: none
+    #logo-fallback
+        display: block
+
+#logo-fallback
+    display: none
+
+#logo, #logo-fallback
+    position: absolute
+    bottom: 53px
+    left: 540px
+
+
+@media screen and (max-width: $mobile-max-width)
+    #header
+        height: auto
+        text-align: center
+        padding: 1.46154em 0
+
+    #logo, #logo-fallback
+        position: static
+        max-width: 90%
+        max-height: 90%
