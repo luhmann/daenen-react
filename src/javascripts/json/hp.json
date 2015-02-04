@@ -1,0 +1,92 @@
+{
+    "name": "Henning Petersen",
+    "jobTitle": "Software Design & Development",
+    "phone": "+49 (0)30 53065865",
+    "email": "hp@daenen4.de",
+    "skype": "henningpe",
+    "externalLinks": [
+        {
+            "label": "Programming",
+            "links": [
+                {
+                    "url": "http://henningpetersen.com",
+                    "text": "Blog"
+                },
+                {
+                    "url": "http://stackoverflow.com/users/7034/henning",
+                    "text": "Stack Overflow"
+                }
+            ]
+        },
+        {
+            "label": "Social Networks",
+            "links": [
+                {
+                    "url": "http://www.xing.com/profile/Henning_Petersen",
+                    "text": "Xing"
+                }
+            ]
+        }
+    ],
+    "qualification": [
+        "Software Architecture & Engineering",
+        "Web-based Systems",
+        "IT Consulting",
+        "Conceptual & Interaction Design",
+        "Paper Prototyping"
+    ],
+    "projects": [
+        {
+            "client": "MyVideo Broadband S.R.L.",
+            "description": "Development of backend systems for the MyVideo online video platform",
+            "link": "http://www.myvideo.de",
+            "screenshots": null
+        },
+        {
+            "client": "Deutsche Telekom AG",
+            "description": "Development of back-end systems for a smart home solution",
+            "link": "https://www.qivicon.com/",
+            "screenshots": null
+        },
+        {
+            "client": "Bisnode Informatics Germany",
+            "description": "Architecture and development of a system to monitor and provide change notifications for company data",
+            "link": "http://www.bisnode.com/",
+            "screenshots": null
+        },
+        {
+            "client": "Bisnode Informatics Germany",
+            "description": "Extension of an administration application for customer data and permissions for D&B Germany",
+            "link": "http://www.bisnode.com/",
+            "screenshots": null
+        },
+        {
+            "client": "Bisnode Informatics Germany",
+            "description": "Extension and CI-compliant adaptation of a company address shop for D&B Germany",
+            "link": "http://www.bisnode.com/",
+            "screenshots": null
+        },
+        {
+            "client": "Ändrä AG",
+            "description": "Development of the translation management system Ontram+ and related components.",
+            "link": "http://www.ontram.de/",
+            "screenshots": null
+        }
+    ],
+    "technologies": [
+        "Java",
+        "Scala",
+        "Groovy",
+        "J2EE",
+        "ORM (JPA 2, JTA, Hibernate)",
+        "Web Services (SOAP, REST, Contract-First, WADL, WSDL, JAX-RS, Spring WS, JAX-WS, JAXB, Apache CXF, Restlet API, Spring WS, SoapUI)",
+        "MVC/Web Application Frameworks (Struts 1, Tapestry 5, Spring MVC, JSF, Seam)",
+        "IOC/DI (Spring)",
+        "Web/SoC (HTML, CSS, JSP, XSLT, Velocity, Javascript, AJAX, jQuery, Prototype, Scriptaculous, SASS, Less)",
+        "DBMS & Migrations (MySQL, PostgreSQL, MS SQL, H2 DB, HSQLDB, Redis, Riak, CouchDb, Liquibase, Flyway, Hibernate Search, Lucene, Solr)",
+        "Testing (JUnit, Spock Test, Mockito, Powermock, Spring Test, DbUnit)",
+        "BPM/Workflows (jBPM, Activity, Apache Camel)",
+        "Application Server (Jetty, Tomcat)"
+    ],
+    "additional": "Please ask for my profile for detailed information"
+}

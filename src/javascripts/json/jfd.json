@@ -1,0 +1,95 @@
+{
+    "name": "Jan Florian Dietrich",
+    "jobTitle": "Frontend-Developer",
+    "email": "jfd@daenen4.de",
+    "skype": "jfdjustme",
+    "externalLinks": [
+        {
+            "label": "Photography",
+            "links": [
+                {
+                    "url": "http://janfloriandietrich.de",
+                    "text": "janfloriandietrich.de"
+                }
+            ]
+        },
+        {
+            "label": "Social Networks",
+            "links": [
+                {
+                    "url": "http://www.xing.com/profile/JanFlorian_Dietrich",
+                    "text": "Xing"
+                }
+            ]
+        }
+    ],
+    "qualification": [
+        "Web Design & Development",
+        "Interface & Interaction Design",
+        "Information Architecture",
+        "Software Development",
+        "Photography & Retouching"
+    ],
+    "projects": [
+        {
+            "client": "tape.tv & SPIEGELOnline",
+            "description": "Facebook-App-Development with OpenGraph-API",
+            "link": null,
+            "screenshots": [
+                {
+                    "title": "Facebook-App: Auf den Dächern Festival 01/02",
+                    "url": "img/flo/tape_tv_spon_add_festival_1.jpg"
+                },
+                {
+                    "title": "Facebook-App: Auf den Dächern Festival 02/02",
+                    "url": "img/flo/tape_tv_spon_add_festival_2.jpg"
+                }
+            ]
+        },
+        {
+            "client": "Home24",
+            "description": "Shop-Development with Zend Framework",
+            "link": "http://www.home24.de",
+            "screenshots": null
+        },
+        {
+            "client": "Globus Deutschland",
+            "description": "Module-Development in yii/PHP5",
+            "link": "http://www.globus.de",
+            "screenshots": null
+        },
+        {
+            "client": "Wir sind Helden",
+            "description": "Wordpress-Development for Band-Webpage",
+            "link": "http://www.wirsindhelden.de",
+            "screenshots": null
+        },
+        {
+            "client": "Weitclick",
+            "description": "Projects involving PHP/yii/JQuery/jQTouch",
+            "link": "http://www.weitclick.de",
+            "screenshots": null
+        }
+    ],
+    "technologies": [
+        "PHP5 (OOP)",
+        "Zend Framework",
+        "yii",
+        "Symfony",
+        "XHTML",
+        "HTML5",
+        "CSS3",
+        "LESS",
+        "SASS",
+        "Compass",
+        "JavaScript",
+        "jQuery",
+        "Ember.js",
+        "Wordpress",
+        "Drupal 6/7/8",
+        "Grid Systems",
+        "Responsive Design",
+        "Mobile/Tablet-Design"
+    ],
+    "additional": "Please ask for my profile for detailed information"
+}
