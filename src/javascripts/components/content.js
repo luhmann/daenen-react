@@ -9,8 +9,8 @@ var Content = React.createClass({
     render: function () {
         return (
             <div id="content">
-                <Developer data={ jfd } />
-                <Developer data={ hp } />
+                <Developer data={ jfd } key="jfd" />
+                <Developer data={ hp } key="hp" />
             </div>
         );
     }
