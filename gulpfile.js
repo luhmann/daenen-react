@@ -28,13 +28,14 @@ gulp.task('styles', function () {
             style: 'expanded',
             precision: 10
         })
+        .on('error', function (err) { console.log(err.message); })
         .pipe($.minifyCss({ benchmark: false }))
         .pipe(gulp.dest($.util.template('<%= buildDir %>/<%= stylesDir %>', gulpConfig)))
         .pipe($.size());
 });
 
 // Scripts
-gulp.task('scripts', function () {
+gulp.task('scripts', ['json'], function () {
     var bundler = watchify(browserify({
         entries: [$.util.template('./<%= srcDir %>/<%= scriptsDir %>/app.js', gulpConfig)],
         insertGlobals: true,
@@ -58,7 +59,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('json', function() {
-    gulp.src($.util.template('./<%= srcDir %>/<%= scriptsDir %>/<%= jsonDir %>/**/*.json', gulpConfig), {base: $.util.template('./<%= srcDir %>/<%= scriptsDir %>', gulpConfig)})
+    gulp.src($.util.template('./<%= srcDir %>/<%= scriptsDir %>/<%= jsonDir %>/**/*.json', gulpConfig))
         .pipe(gulp.dest($.util.template('<%= buildDir %>/<%= scriptsDir %>', gulpConfig)));
 });
 
@@ -91,11 +92,11 @@ gulp.task('watch', ['bundle'], function () {
     //gulp.watch('app/*.html', ['html']);
 
 
-    gulp.watch($.util.template('<%= srcDir %>/<%= stylesDir %>/**.sass', gulpConfig), ['styles']);
+    gulp.watch($.util.template('<%= srcDir %>/<%= stylesDir %>/**', gulpConfig), ['styles']);
 
 });
 
 
-gulp.task('bundle', ['json', 'scripts', 'styles']);
+gulp.task('bundle', ['images', 'scripts', 'styles']);
 
 gulp.task('build', ['clean', 'bundle', 'images', 'extras']);
