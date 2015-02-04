@@ -69,27 +69,43 @@
             "description": "Projects involving PHP/yii/JQuery/jQTouch",
             "link": "http://www.weitclick.de",
             "screenshots": null
+        },
+        {
+            "client": "MDT24",
+            "description": "Drupal 6 Development for a travel insurance broker",
+            "link": "http://www.mdt24.de/",
+            "screenshots": [
+                {
+                    "title": "MDT – Makler der Touristik 01/02",
+                    "url": "img/flo/mdt_01.jpg"
+                },
+                {
+                    "title": "MDT – Makler der Touristik 02/02",
+                    "url": "img/flo/mdt_02.jpg"
+                }
+            ]
         }
     ],
     "technologies": [
         "PHP5 (OOP)",
-        "Zend Framework",
-        "yii",
-        "Symfony",
-        "XHTML",
-        "HTML5",
-        "CSS3",
-        "LESS",
-        "SASS",
-        "Compass",
-        "JavaScript",
-        "jQuery",
-        "Ember.js",
-        "Wordpress",
-        "Drupal 6/7/8",
-        "Grid Systems",
+        "PHP Frameworks (Symfony 2, Laravel, Zend Framework 2, yii)",
+        "HTML5/XHTML/WebComponents",
+        "CSS/Preprocessors/Libs (CSS3, SASS, Compass, Bourbon, Bitters, Less, Stylus)",
+        "JavaScript/ES5/ES6/NodeJS/io.js",
+        "Javascript Frameworks (AngularJS, Flux + React, Backbone.js, Ember.js, Mithril)",
+        "Design Patterns (Mobile First, Responsive/Adaptive Design, Grid Systems)",
+        "Testing (PHPUnit, Jasmine, Mocha, Karma, CasperJS, Sinon, Behat, Selenium)",
+        "Build Tools (Grunt, Gulp, Jenkins, Ant)",
+        "CMS (Wordpress, Drupal 6/7/8, Ghost)",
         "Responsive Design",
-        "Mobile/Tablet-Design"
+        "Mobile/Tablet-Design",
+        "DBMS + Migrations (MySql/MariaDB, PostgreSQL, Doctrine, Eloquent)",
+        "NoSQL (Redis, Riak, CouchDB)",
+        "Solr/Lucene/Elasticsearch",
+        "Python 2/3",
+        "Python Frameworks (Flask)",
+        "Scrapy",
+        "Environment (Varnish, Nginx, Tornado, Express, Koa)"
     ],
     "additional": "Please ask for my profile for detailed information"
 }
