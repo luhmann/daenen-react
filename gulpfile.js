@@ -16,9 +16,7 @@ var gulpConfig = {
 };
 
 gulp.task('clean', function (cb) {
-    del([
-        gulpConfig.buildDir
-    ], cb);
+    cb(del(gulpConfig.buildDir));
 });
 
 
@@ -58,9 +56,15 @@ gulp.task('scripts', ['json'], function () {
 
 });
 
+gulp.task('compress', ['scripts'], function () {
+    return gulp.src($.util.template('./<%= buildDir %>/<%= scriptsDir %>/*.js', gulpConfig))
+        .pipe($.uglify())
+        .pipe(gulp.dest($.util.template('./<%= buildDir %>/<%= scriptsDir %>', gulpConfig)));
+});
+
 gulp.task('json', function() {
-    gulp.src($.util.template('./<%= srcDir %>/<%= scriptsDir %>/<%= jsonDir %>/**/*.json', gulpConfig))
-        .pipe(gulp.dest($.util.template('<%= buildDir %>/<%= scriptsDir %>', gulpConfig)));
+    return gulp.src($.util.template('./<%= srcDir %>/<%= scriptsDir %>/<%= jsonDir %>/*.json', gulpConfig))
+        .pipe(gulp.dest($.util.template('<%= buildDir %>/<%= scriptsDir %>/<%= jsonDir %>', gulpConfig)));
 });
 
 // Images
@@ -99,4 +103,4 @@ gulp.task('watch', ['bundle'], function () {
 
 gulp.task('bundle', ['images', 'scripts', 'styles']);
 
-gulp.task('build', ['clean', 'bundle', 'images', 'extras']);
+gulp.task('build', ['bundle', 'extras', 'compress']);

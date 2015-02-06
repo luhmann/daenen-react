@@ -71,6 +71,72 @@
             "description": "Development of the translation management system Ontram+ and related components.",
             "link": "http://www.ontram.de/",
             "screenshots": null
+        },
+        {
+            "client": "Bisnode Informatics Germany",
+            "description": "Architecture and lead development of a process automation system to connect international fulfillment systems and teams.",
+            "link": "http://www.bisnode.com/",
+            "screenshots": null
+        },
+        {
+            "client": "Bisnode Informatics Germany",
+            "description": "Development Lead for a B2B Marketing Address Shop for D&B Germany",
+            "link": "http://www.bisnode.com/",
+            "screenshots": null
+        },
+        {
+            "client": "Deutsche Post IT Solutions",
+            "description": "Interaction Design and Web Development of a Web-based Business System Prototype for Mail Hubs",
+            "link": "http://www.dp-itsolutions.de/",
+            "screenshots": null
+        },
+        {
+            "client": "Maris Consulting GmbH",
+            "description": "Consulting & Development of Teamsite-based Systems for Bayer Schering Pharma AG",
+            "link": "http://www.maris-consulting.com/",
+            "screenshots": null
+        },
+        {
+            "client": "Shoppero.com GmbH",
+            "description": "Development Shoppero.com",
+            "link": null,
+            "screenshots": [
+                {
+                    "title": "Shoppero.com 01/02",
+                    "url": "/images/henning/shoppero1.png"
+                },
+                {
+                    "title": "Shoppero.com  02/02",
+                    "url": "/images/henning/shoppero2.png"
+                }
+            ]
+        },
+        {
+            "client": "win.rar GmbH",
+            "description": "Re-Engineering Intranet Sales Management System",
+            "link": "http://www.win-rar.com/",
+            "screenshots": null
+        },
+        {
+            "client": "Arvato Systems GmbH",
+            "description": "Consulting & Development for MediaFed",
+            "link": "http://www.arvato-systems.de/",
+            "screenshots": [
+                {
+                    "title": "MediaFed Metrics 01/02",
+                    "url": "/images/henning/rssmetrics1.png"
+                },
+                {
+                    "title": "MediaFed Metrics 02/02",
+                    "url": "/images/henning/rssmetrics2.png"
+                }
+            ]
+        },
+        {
+            "client": "Arvato Systems GmbH",
+            "description": "Consulting & Development for Sony BMG Music Entertainment",
+            "link": "http://www.arvato-systems.de/",
+            "screenshots": null
         }
     ],
     "technologies": [

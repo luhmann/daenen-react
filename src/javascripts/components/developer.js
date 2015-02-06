@@ -1,6 +1,6 @@
 var Link = require('./link');
 var ElementWithLabel = require('./elementWithLabel');
-var Project = require('./project');
+var ProjectList = require('./projectList');
 
 var DeveloperSection = React.createClass({
     render: function () {
@@ -25,14 +25,6 @@ var Developer = React.createClass({
                         );
                     }) }
                 </ElementWithLabel>
-            );
-        });
-
-        var projects = this.props.data.projects.map(function (project) {
-            return(
-                <li>
-                    <Project data={ project } />
-                </li>
             );
         });
 
@@ -83,10 +75,7 @@ var Developer = React.createClass({
                 </DeveloperSection>
 
                 <DeveloperSection>
-                    <ElementWithLabel label="Clients and Projects"></ElementWithLabel>
-                    <ul>
-                        { projects }
-                    </ul>
+                    <ProjectList projects={ this.props.data.projects } />
                 </DeveloperSection>
 
                 <DeveloperSection>

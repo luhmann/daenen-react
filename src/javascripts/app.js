@@ -1,4 +1,4 @@
-var React = window.React = require('react'),
+var React = window.React = require('react/addons'),
     Header = require('./components/header.js'),
     Content = require('./components/content.js'),
     Footer = require('./components/footer.js'),

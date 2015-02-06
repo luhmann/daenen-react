@@ -32,17 +32,29 @@
     ],
     "projects": [
         {
+            "client": "MyVideo Broadband S.R.L. / ProSiebenSat1 Digital",
+            "description": "Frontend & Mobile Development for the MyVideo online video platform",
+            "link": "http://www.myvideo.de",
+            "screenshots": null
+        },
+        {
+            "client": "Evinum",
+            "description": "Development of an information retrieval and management system for wine data",
+            "link": "http://www.evinum.de",
+            "screenshots": null
+        },
+        {
             "client": "tape.tv & SPIEGELOnline",
             "description": "Facebook-App-Development with OpenGraph-API",
             "link": null,
             "screenshots": [
                 {
                     "title": "Facebook-App: Auf den Dächern Festival 01/02",
-                    "url": "img/flo/tape_tv_spon_add_festival_1.jpg"
+                    "url": "/images/flo/tape_tv_spon_add_festival_1.jpg"
                 },
                 {
                     "title": "Facebook-App: Auf den Dächern Festival 02/02",
-                    "url": "img/flo/tape_tv_spon_add_festival_2.jpg"
+                    "url": "/images/flo/tape_tv_spon_add_festival_2.jpg"
                 }
             ]
         },
@@ -77,11 +89,26 @@
             "screenshots": [
                 {
                     "title": "MDT – Makler der Touristik 01/02",
-                    "url": "img/flo/mdt_01.jpg"
+                    "url": "/images/flo/mdt_01.jpg"
                 },
                 {
                     "title": "MDT – Makler der Touristik 02/02",
-                    "url": "img/flo/mdt_02.jpg"
+                    "url": "/images/flo/mdt_02.jpg"
+                }
+            ]
+        },
+        {
+            "client": "Bananenbiegerei",
+            "description": "Wordpress Development for graphic design portfolio",
+            "link": "http://www.bananenbiegerei.de/",
+            "screenshots": [
+                {
+                    "title": "Bananenbiegerei – Design Portfolio 01/02",
+                    "url": "/images/flo/bb_01.jpg"
+                },
+                {
+                    "title": "Bananenbiegerei – Design Portfolio 02/02",
+                    "url": "/images/flo/bb_02.jpg"
                 }
             ]
         }
@@ -93,7 +120,7 @@
         "CSS/Preprocessors/Libs (CSS3, SASS, Compass, Bourbon, Bitters, Less, Stylus)",
         "JavaScript/ES5/ES6/NodeJS/io.js",
         "Javascript Frameworks (AngularJS, Flux + React, Backbone.js, Ember.js, Mithril)",
-        "Design Patterns (Mobile First, Responsive/Adaptive Design, Grid Systems)",
+        "Design Patterns (Mobile First, Responsive/Adaptive Design, Grid Systems, Information Architecture)",
         "Testing (PHPUnit, Jasmine, Mocha, Karma, CasperJS, Sinon, Behat, Selenium)",
         "Build Tools (Grunt, Gulp, Jenkins, Ant)",
         "CMS (Wordpress, Drupal 6/7/8, Ghost)",
