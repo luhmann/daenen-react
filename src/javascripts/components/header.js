@@ -1,8 +1,12 @@
+const Router = require('react-router');
+const Link = Router.Link;
+
+
 var Logo = React.createClass({
     render: function () {
         return (
             <img
-                id="logo"
+                className="header--logo"
                 src="images/logo.svg"
                 width="364"
                 height="114"
@@ -17,7 +21,7 @@ var LogoFallback = React.createClass({
     render: function () {
         return (
             <img
-                id="logo-fallback"
+                className="header--logo-fallback"
                 src="images/logo_364px.png"
                 width="364"
                 height="114"
@@ -31,9 +35,13 @@ var LogoFallback = React.createClass({
 var Header = React.createClass({
     render: function () {
         return (
-            <div id="header">
-                <Logo />
-                <LogoFallback />
+            <div className="header">
+                <Link to="home">
+                    <Logo />
+                </Link>
+                <Link to="home">
+                    <LogoFallback />
+                </Link>
             </div>
         );
     }

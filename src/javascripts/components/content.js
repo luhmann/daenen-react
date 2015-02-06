@@ -2,9 +2,6 @@ var Developer = require('./developer.js');
 var jfd = require('../json/jfd.json');
 var hp = require('../json/hp.json');
 
-
-
-
 var Content = React.createClass({
     render: function () {
         return (

@@ -40,7 +40,7 @@ var Project = React.createClass({
                     <Screenshot client={ this.props.data.client } title={ shot.title } url={ shot.url } />
                 );
             }, this);
-            console.log(this.props.key);
+
             screenshots = function (client, screenshots, index) {
                 return (
                     <span className={"project--screenshots " + slugify(client) +  index}>[{ screenshots }]</span>
