@@ -6,7 +6,7 @@ var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 
 var gulpConfig = {
-    'srcDir': 'src',
+    'srcDir': 'client',
     'scriptsDir': 'javascripts',
     'stylesDir': 'stylesheets',
     'buildDir': 'build',

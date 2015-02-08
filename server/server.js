@@ -1,12 +1,11 @@
 var logger = require('koa-logger');
 var router = require('koa-router');
 var serve = require('koa-static');
-var path = require('path');
 var fs = require('fs');
 var React = require('react');
 var Router = require('react-router');
 var getRoutes = require('./routes');
-var indexHTML = fs.readFileSync(__dirname+'/../src/index.html').toString();
+var indexHTML = fs.readFileSync(__dirname+'/../client/index.html').toString();
 var koa = module.exports = require('koa');
 var app = koa();
 
