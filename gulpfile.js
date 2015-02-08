@@ -16,12 +16,12 @@ var gulpConfig = {
 };
 
 gulp.task('clean', function (cb) {
-    cb(del(gulpConfig.buildDir));
+    del(gulpConfig.buildDir, cb);
 });
 
 
 // Styles
-gulp.task('styles', function () {
+gulp.task('styles', ['clean'], function () {
     return $.rubySass($.util.template('<%= srcDir %>/<%= stylesDir %>', gulpConfig), {
             style: 'expanded',
             precision: 10
@@ -33,7 +33,7 @@ gulp.task('styles', function () {
 });
 
 // Scripts
-gulp.task('scripts', ['json'], function () {
+gulp.task('scripts', ['clean', 'json'], function () {
     var bundler = watchify(browserify({
         entries: [$.util.template('./<%= srcDir %>/<%= scriptsDir %>/app.js', gulpConfig)],
         insertGlobals: true,
@@ -57,7 +57,7 @@ gulp.task('scripts', ['json'], function () {
 });
 
 // without watch
-gulp.task('scripts-prod', ['json'], function () {
+gulp.task('scripts-prod', ['clean', 'json'], function () {
     var bundler = browserify({
         entries: [$.util.template('./<%= srcDir %>/<%= scriptsDir %>/app.js', gulpConfig)],
         insertGlobals: true,
@@ -78,15 +78,15 @@ gulp.task('compress', ['scripts-prod'], function () {
         .pipe(gulp.dest($.util.template('./<%= buildDir %>/<%= scriptsDir %>', gulpConfig)));
 });
 
-gulp.task('json', function() {
+gulp.task('json', ['clean'], function() {
     return gulp.src(
-        $.util.template('./<%= srcDir %>/<%= scriptsDir %>/<%= jsonDir %>/*.json', gulpConfig),
+        $.util.template('./<%= srcDir %>/<%= scriptsDir %>/<%= jsonDir %>/**/*.json', gulpConfig),
         {base: $.util.template('./<%= srcDir %>/<%= scriptsDir %>', gulpConfig )}
     ).pipe(gulp.dest($.util.template('<%= buildDir %>/<%= scriptsDir %>/<%= jsonDir %>/', gulpConfig)));
 });
 
 // Images
-gulp.task('images', function () {
+gulp.task('images', ['clean'], function () {
     return gulp.src($.util.template('<%= srcDir %>/<%= imgDir %>/**/*', gulpConfig))
         .pipe($.imagemin({
             optimizationLevel: 3,
@@ -98,7 +98,7 @@ gulp.task('images', function () {
 });
 
 // Robots.txt and favicon.ico
-gulp.task('extras', function () {
+gulp.task('extras', ['clean'], function () {
     return gulp.src([$.util.template('<%= srcDir %>/*.txt', gulpConfig), $.util.template('<%= srcDir %>/*.ico', gulpConfig)])
         .pipe(gulp.dest($.util.template('<%= buildDir %>', gulpConfig)))
         .pipe($.size());
@@ -122,4 +122,4 @@ gulp.task('watch', ['scripts', 'styles', 'images'], function () {
 
 gulp.task('bundle', ['scripts-prod', 'styles']);
 
-gulp.task('build', ['clean', 'bundle', 'images', 'extras', 'compress']);
+gulp.task('build', ['styles', 'images', 'extras', 'compress']);
