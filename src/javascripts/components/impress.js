@@ -1,6 +1,7 @@
-var Link = require('./link');
-var ElementWithLabel = require('./elementWithLabel');
-var jfd = require('../json/jfd.json');
+const React = require('react');
+const Link = require('./link');
+const ElementWithLabel = require('./elementWithLabel');
+const jfd = require('../json/jfd.json');
 
 var Impress = React.createClass({
     render: function () {

@@ -1,6 +1,8 @@
+const React = require('react');
 var Link = require('./link');
 var ElementWithLabel = require('./elementWithLabel');
 var ProjectList = require('./projectList');
+const MailtoLink = require('./mailtoLink');
 
 var DeveloperSection = React.createClass({
     render: function () {
@@ -41,7 +43,7 @@ var Developer = React.createClass({
         }(this.props.data.additional);
 
         return (
-            <div className="developer">
+            <div className="developer" key={ this.props.data.id } >
                 <DeveloperSection>
                     <h3 className="developer--name">{ this.props.data.name }</h3>
                     <div className="developer--job-title">{ this.props.data.jobTitle }</div>
@@ -56,9 +58,7 @@ var Developer = React.createClass({
                     }
 
                     <ElementWithLabel label="E-Mail">
-                        <Link title={ this.props.data.email } isMailto={ true } url={ this.props.data.email }>
-                            { this.props.data.email }
-                        </Link>
+                        <MailtoLink email={ this.props.data.email } />
                     </ElementWithLabel>
 
                     <ElementWithLabel label="Skype">{ this.props.data.skype }</ElementWithLabel>

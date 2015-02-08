@@ -3,6 +3,10 @@ var router = require('koa-router');
 var serve = require('koa-static');
 var path = require('path');
 var fs = require('fs');
+var React = require('react');
+var Router = require('react-router');
+var getRoutes = require('./routes');
+var indexHTML = fs.readFileSync(__dirname+'/../src/index.html').toString();
 var koa = module.exports = require('koa');
 var app = koa();
 
@@ -13,17 +17,39 @@ app.use(serve(config.assetPath));
 app.use(router(app));
 
 
-routes = require('./routes.js');
+var renderApp = (req, cb) => {
+    var path = req.url;
+    var htmlRegex = /¡HTML!/;
+    var dataRegex = /¡DATA!/;
 
+    var router = Router.create({
+        routes: getRoutes(),
+        location: path,
+        onAbort: function (redirect) {
+            cb({redirect});
+        },
+        onError: function (err) {
+            console.log('Routing Error');
+            console.log(err);
+        }
+    });
 
+    router.run((Handler, state) => {
+        var html = React.renderToString(<Handler />);
+        var output = indexHTML.
+            replace(htmlRegex, html).
+            replace(dataRegex, '');
+        cb(null, output);
+    });
+};
 
-//app.get('/', routes.home);
-//app.get('/impressum', routes.home);
+renderApp.bind(this);
+
 
 app.use(function *(){
-    var filepath = path.join(__dirname, '..', 'src', 'index.html');
-    this.type = path.extname(filepath);
-    this.body = fs.createReadStream(filepath);
+    renderApp(this.request, (error, html) => {
+        this.body = html;
+    });
 });
 
 app.listen(3000);

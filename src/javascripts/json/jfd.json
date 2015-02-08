@@ -1,4 +1,5 @@
 {
+    "id": "jfd",
     "name": "Jan Florian Dietrich",
     "jobTitle": "Frontend-Developer",
     "email": "jfd@daenen4.de",
@@ -25,14 +26,16 @@
     ],
     "qualification": [
         "Web Design & Development",
-        "Interface & Interaction Design",
+        "Software Engineering",
+        "Mobile Development",
+        "User-Interface & User-Experience Design",
         "Information Architecture",
-        "Software Development",
+        "Automated Testing",
         "Photography & Retouching"
     ],
     "projects": [
         {
-            "client": "MyVideo Broadband S.R.L. / ProSiebenSat1 Digital",
+            "client": "MyVideo / ProSiebenSat1 Digital",
             "description": "Frontend & Mobile Development for the MyVideo online video platform",
             "link": "http://www.myvideo.de",
             "screenshots": null
@@ -114,7 +117,8 @@
         }
     ],
     "technologies": [
-        "PHP5 (OOP)",
+        "PHP5",
+        "Hack/HHVM",
         "PHP Frameworks (Symfony 2, Laravel, Zend Framework 2, yii)",
         "HTML5/XHTML/WebComponents",
         "CSS/Preprocessors/Libs (CSS3, SASS, Compass, Bourbon, Bitters, Less, Stylus)",

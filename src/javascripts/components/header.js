@@ -1,5 +1,5 @@
-const Router = require('react-router');
-const Link = Router.Link;
+const React = require('react');
+const { Link } = require('react-router');
 
 
 var Logo = React.createClass({

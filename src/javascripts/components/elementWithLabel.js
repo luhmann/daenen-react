@@ -1,3 +1,4 @@
+const React = require('react');
 var ElementWithLabel = React.createClass({
     render: function () {
         return (

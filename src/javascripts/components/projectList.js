@@ -1,8 +1,9 @@
+const React = require('react');
 var slugify = require("underscore.string/slugify");
 var Link = require('./link');
 var ElementWithLabel = require('./elementWithLabel');
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-var Lightbox = require('lightbox');
+var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
+
 
 var Screenshot = React.createClass({
     render: function () {
@@ -16,6 +17,8 @@ var Screenshot = React.createClass({
 
 var Project = React.createClass({
     componentDidMount: function () {
+        // require here so it does not get included on server-side rendering
+        var Lightbox = require('lightbox');
         Lightbox.run('.' + slugify(this.props.data.client) + this.props.index);
     },
     render: function () {
@@ -99,9 +102,9 @@ var ProjectList = React.createClass({
             <div className="projectlist">
                 <ElementWithLabel label="Clients and Projects"></ElementWithLabel>
                 <ul>
-                    <ReactCSSTransitionGroup transitionName="projects">
+                    <TransitionGroup transitionName="projects">
                         { this.renderProjects() }
-                    </ReactCSSTransitionGroup>
+                    </TransitionGroup>
                 </ul>
                 <MoreButton callback={ this.handleMoreButtonClick } text={ this.getMoreButtonText() }/>
             </div>
