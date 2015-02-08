@@ -1,4 +1,4 @@
 var path = require('path');
 module.exports = {
-    assetPath: path.join(__dirname, '..', 'build')
+    assetPath: path.join(__dirname, '..', 'public')
 };
