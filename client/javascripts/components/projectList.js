@@ -38,9 +38,9 @@ var Project = React.createClass({
         }
 
         if (this.props.data.screenshots) {
-            screenshots = this.props.data.screenshots.map(function (shot) {
+            screenshots = this.props.data.screenshots.map(function (shot, index) {
                 return (
-                    <Screenshot client={ this.props.data.client } title={ shot.title } url={ shot.url } />
+                    <Screenshot client={ this.props.data.client } title={ shot.title } url={ shot.url } key={ this.props.data.client + index}/>
                 );
             }, this);
 
@@ -86,9 +86,9 @@ var ProjectList = React.createClass({
 
         return projects.map(function (project, index) {
             return(
-                <li><Project data={ project } key={ index } index={ index } /></li>
+                <li><Project data={ project } key={ this.props.dev + index } index={ index } /></li>
             );
-        });
+        }, this);
     },
     handleMoreButtonClick: function (event) {
         event.preventDefault();

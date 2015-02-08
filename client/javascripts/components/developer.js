@@ -20,20 +20,22 @@ var Developer = React.createClass({
 
         var externalLinks = this.props.data.externalLinks.map(function (row) {
             return (
-                <ElementWithLabel label={ row.label }>
-                    { row.links.map(function (link) {
+                <ElementWithLabel label={ row.label } key={row.label} >
+                    { row.links.map(function (link, index) {
                         return (
-                            <Link target="_blank" url={ link.url }>{ link.text }</Link>
+                            <Link target="_blank" url={ link.url } key={ this.props.data.id + row.label + index} >
+                                { link.text }
+                            </Link>
                         );
-                    }) }
+                    }, this) }
                 </ElementWithLabel>
             );
-        });
+        }, this);
 
-        var additional = function(info) {
+        var additional = function (info) {
             if (info) {
                 return (
-                    <DeveloperSection>
+                    <DeveloperSection key="additional">
                         { info }
                     </DeveloperSection>
                 );
@@ -44,12 +46,12 @@ var Developer = React.createClass({
 
         return (
             <div className="developer" key={ this.props.data.id } >
-                <DeveloperSection>
+                <DeveloperSection key="name">
                     <h3 className="developer--name">{ this.props.data.name }</h3>
                     <div className="developer--job-title">{ this.props.data.jobTitle }</div>
                 </DeveloperSection>
 
-                <DeveloperSection>
+                <DeveloperSection key="contact">
                     {
                         (this.props.data.phone) &&
                         <ElementWithLabel label="Phone">
@@ -64,21 +66,21 @@ var Developer = React.createClass({
                     <ElementWithLabel label="Skype">{ this.props.data.skype }</ElementWithLabel>
                 </DeveloperSection>
 
-                <DeveloperSection>
+                <DeveloperSection key="links">
                     { externalLinks }
                 </DeveloperSection>
 
-                <DeveloperSection>
+                <DeveloperSection key="qualifications">
                     <ElementWithLabel label="I do">
                         { this.props.data.qualification.join(', ') }.
                     </ElementWithLabel>
                 </DeveloperSection>
 
-                <DeveloperSection>
-                    <ProjectList projects={ this.props.data.projects } />
+                <DeveloperSection key="projects">
+                    <ProjectList projects={ this.props.data.projects } dev={ this.props.data.id }/>
                 </DeveloperSection>
 
-                <DeveloperSection>
+                <DeveloperSection key="technologies">
                     <ElementWithLabel label="Technologies">
                         { this.props.data.technologies.join(', ') }.
                     </ElementWithLabel>
