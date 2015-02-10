@@ -12,11 +12,12 @@ var gulpConfig = {
     'buildDir': 'public',
     'imgDir': 'images',
     'jsonDir': 'json',
+    'vendorsDir': 'vendors',
     'file': __filename
 };
 
 gulp.task('clean', function (cb) {
-    del(gulpConfig.buildDir, cb);
+    del([gulpConfig.buildDir, gulpConfig.vendorsDir], cb);
 });
 
 
@@ -33,7 +34,7 @@ gulp.task('styles', ['clean'], function () {
 });
 
 // Scripts
-gulp.task('scripts', ['clean', 'json'], function () {
+gulp.task('scripts', ['clean', 'modernizr'], function () {
     var bundler = watchify(browserify({
         entries: [$.util.template('./<%= srcDir %>/<%= scriptsDir %>/app.js', gulpConfig)],
         insertGlobals: true,
@@ -57,7 +58,7 @@ gulp.task('scripts', ['clean', 'json'], function () {
 });
 
 // without watch
-gulp.task('scripts-prod', ['clean', 'json'], function () {
+gulp.task('scripts-prod', ['clean', 'modernizr'], function () {
     var bundler = browserify({
         entries: [$.util.template('./<%= srcDir %>/<%= scriptsDir %>/app.js', gulpConfig)],
         insertGlobals: true,
@@ -72,17 +73,17 @@ gulp.task('scripts-prod', ['clean', 'json'], function () {
         .pipe(gulp.dest($.util.template('<%= buildDir %>/<%= scriptsDir %>', gulpConfig)));
 });
 
-gulp.task('compress', ['scripts-prod'], function () {
+gulp.task('modernizr', ['clean', 'styles'], function () {
+    return gulp.src($.util.template('<%= srcDir %>/<%= stylesDir %>/**/*.sass', gulpConfig))
+        .pipe($.modernizr({ "options": ["setClasses"]}))
+        .pipe(gulp.dest($.util.template('<%= vendorsDir %>/', gulpConfig)));
+
+});
+
+gulp.task('compress', ['scripts-prod'] , function () {
     return gulp.src($.util.template('./<%= buildDir %>/<%= scriptsDir %>/*.js', gulpConfig))
         .pipe($.uglify())
         .pipe(gulp.dest($.util.template('./<%= buildDir %>/<%= scriptsDir %>', gulpConfig)));
-});
-
-gulp.task('json', ['clean'], function() {
-    return gulp.src(
-        $.util.template('./<%= srcDir %>/<%= scriptsDir %>/<%= jsonDir %>/**/*.json', gulpConfig),
-        {base: $.util.template('./<%= srcDir %>/<%= scriptsDir %>', gulpConfig )}
-    ).pipe(gulp.dest($.util.template('<%= buildDir %>/<%= scriptsDir %>/<%= jsonDir %>/', gulpConfig)));
 });
 
 // Images
@@ -120,6 +121,4 @@ gulp.task('watch', ['scripts', 'styles', 'images'], function () {
 });
 
 
-gulp.task('bundle', ['scripts-prod', 'styles']);
-
-gulp.task('build', ['styles', 'images', 'extras', 'compress']);
+gulp.task('build', ['images', 'extras', 'compress']);
