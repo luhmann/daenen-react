@@ -127,16 +127,16 @@
         "Design Patterns (Mobile First, Responsive/Adaptive Design, Grid Systems, Information Architecture)",
         "Testing (PHPUnit, Jasmine, Mocha, Karma, CasperJS, Sinon, Behat, Selenium)",
         "Build Tools (Grunt, Gulp, Jenkins, Ant)",
-        "CMS (Wordpress, Drupal 6/7/8, Ghost)",
+        "CMS (Wordpress, Drupal 7 & 8, Ghost)",
         "Responsive Design",
-        "Mobile/Tablet-Design",
-        "DBMS + Migrations (MySql/MariaDB, PostgreSQL, Doctrine, Eloquent)",
+        "Mobile Design",
+        "DBMS & Migrations (MySql/MariaDB, PostgreSQL, Doctrine, Eloquent)",
         "NoSQL (Redis, Riak, CouchDB)",
         "Solr/Lucene/Elasticsearch",
         "Python 2/3",
         "Python Frameworks (Flask)",
         "Scrapy",
-        "Environment (Varnish, Nginx, Tornado, Express, Koa)"
+        "Server (Varnish, Nginx, Tornado, Express, Koa)"
     ],
     "additional": "Please ask for my profile for detailed information"
 }
