@@ -46,10 +46,7 @@ plan.remote(function(remote) {
 
     remote.log('Reload application');
     remote.exec('ln -snf ' + serverBasePath + tmpDir + ' /srv/www/daenen-react/current');
-    //remote.sudo('pm2 reload example-com', {user: 'www-data'});
+    remote.exec('sudo stop daenen');
+    remote.exec('sudo start daenen');
 });
 
-// run more commands on localhost afterwards
-//plan.local(function(local) { /* ... */ });
-// ...or on remote hosts
-//plan.remote(function(remote) { /* ... */ });
