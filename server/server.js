@@ -28,6 +28,7 @@ var renderApp = (req, cb) => {
     var path = req.url;
     var htmlRegex = /¡HTML!/;
     var dataRegex = /¡DATA!/;
+    var layoutRegex = /¡LAYOUT-CLASS!/;
 
     var router = Router.create({
         routes: getRoutes(),
@@ -45,7 +46,7 @@ var renderApp = (req, cb) => {
         var html = React.renderToString(<Handler />);
         var output = indexHTML.
             replace(htmlRegex, html).
-            replace(dataRegex, '');
+            replace(layoutRegex, (Math.random() >= 0.5) ? 'is-beam' : '');
         cb(null, output);
     });
 };

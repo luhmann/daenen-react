@@ -108,14 +108,11 @@ gulp.task('extras', ['clean'], function () {
 // Watch
 gulp.task('watch', ['scripts', 'styles', 'images'], function () {
 
-    // Watch .json files
-    gulp.watch($.util.template('./<%= srcDir %>/<%= scriptsDir %>/<%= jsonDir %>/*.json', gulpConfig), ['json']);
-
     // Watch CSS-Files
-    gulp.watch($.util.template('<%= srcDir %>/<%= stylesDir %>/**', gulpConfig), ['styles']);
+    gulp.watch($.util.template('<%= srcDir %>/<%= stylesDir %>/**', gulpConfig), ['styles', 'scripts', 'images']);
 
     // Watch image files
-    gulp.watch($.util.template('<%= srcDir %>/<%= imgDir %>/**/*', gulpConfig), ['images']);
+    gulp.watch($.util.template('<%= srcDir %>/<%= imgDir %>/**/*', gulpConfig), ['images', 'styles', 'scripts']);
 
     // JS-Files watched by watchify
 });
