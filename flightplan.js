@@ -10,8 +10,12 @@ plan.target('production', [
     }
 ]);
 
-var tmpDir = 'deploy-' + new Date().getTime();
-var serverBasePath = '/srv/www/daenen-react/'
+var config = {
+    tmpDir: ('deploy-' + new Date().getTime()),
+    serverBasePath:  '/srv/www/daenen-react/',
+    keepReleases: 5
+};
+
 
 // run commands on localhost
 plan.local(function(local) {
@@ -30,23 +34,49 @@ plan.local(function(local) {
     var buildDir = local.exec('find public -print', {silent: true});
 
     // rsync files to all the target's remote hosts
-    local.transfer(filesToCopy, '/tmp/' + tmpDir);
-    local.transfer(buildDir, '/tmp/' + tmpDir);
+    local.transfer(filesToCopy, '/tmp/' + config.tmpDir);
+    local.transfer(buildDir, '/tmp/' + config.tmpDir);
 });
 
 // run commands on the target's remote hosts
 plan.remote(function(remote) {
     remote.log('Move folder to web root');
-    remote.exec('cp -R /tmp/' + tmpDir + ' ' + serverBasePath);
-    remote.rm('-rf /tmp/' + tmpDir);
+    remote.exec('cp -R /tmp/' + config.tmpDir + ' ' + config.serverBasePath);
+    remote.rm('-rf /tmp/' + config.tmpDir);
 
     remote.log('Install dependencies');
-    remote.exec('npm --production --prefix ' + serverBasePath + tmpDir
-    + ' install ' + serverBasePath + tmpDir);
+    remote.exec('npm --production --prefix ' + config.serverBasePath + config.tmpDir
+    + ' install ' + config.serverBasePath + config.tmpDir);
 
     remote.log('Reload application');
-    remote.exec('ln -snf ' + serverBasePath + tmpDir + ' /srv/www/daenen-react/current');
+    remote.exec('ln -snf ' + config.serverBasePath + config.tmpDir + ' ' + config.serverBasePath + 'current');
     remote.exec('sudo stop daenen');
     remote.exec('sudo start daenen');
+
+    remote.log('Checking for stale releases');
+    var releases = getReleases(remote);
+
+    if (releases.length > config.keepReleases) {
+        var removeCount = releases.length - config.keepReleases;
+        remote.log('Removing ' + removeCount + ' stale release(s)');
+
+        releases = releases.slice(0, removeCount);
+        releases = releases.map(function (item) {
+            return config.serverBasePath  + item;
+        });
+
+        remote.exec('rm -rf ' + releases.join(' '));
+    }
 });
+
+function getReleases(remote) {
+    var releases = remote.exec('ls ' + config.serverBasePath, {silent: true});
+
+    if (releases.code === 0) {
+        releases = releases.stdout.trim().split('\n');
+        return releases;
+    }
+
+    return [];
+}
 
