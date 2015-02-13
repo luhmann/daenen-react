@@ -56,7 +56,7 @@ Deployment is done with `flightplan.js`. It is as simple as running:
 
 ...but needs to be set up correctly to function:
  
-* Acquire the correct set of ssh-identity files (ask)
+* Acquire the correct set of ssh-keys (ask)
 * Put them in `~/.ssh`
 * Add them to ssh-agent: `ssh-add -K /Users/<User>/.ssh/daenen_deploy_rsa` 
 * Enter password
