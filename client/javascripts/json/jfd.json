@@ -134,8 +134,7 @@
         "NoSQL (Redis, Riak, CouchDB)",
         "Solr/Lucene/Elasticsearch",
         "Python 2/3",
-        "Python Frameworks (Flask)",
-        "Scrapy",
+        "Python Frameworks (Flask, Django, Scrapy)",
         "Server (Varnish, Nginx, Tornado, Express, Koa)"
     ],
     "additional": "Please ask for my profile for detailed information"
