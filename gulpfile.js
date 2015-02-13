@@ -23,10 +23,8 @@ gulp.task('clean', function (cb) {
 
 // Styles
 gulp.task('styles', ['clean'], function () {
-    return $.rubySass($.util.template('<%= srcDir %>/<%= stylesDir %>', gulpConfig), {
-            style: 'expanded',
-            precision: 10
-        })
+    return gulp.src($.util.template('<%= srcDir %>/<%= stylesDir %>/**/*(*.sass|*.scss)', gulpConfig))
+        .pipe($.sass({indentedSyntax: true}))
         .on('error', function (err) { console.log(err.message); })
         .pipe($.minifyCss({ benchmark: false, keepSpecialComments: 0 }))
         .pipe(gulp.dest($.util.template('<%= buildDir %>/<%= stylesDir %>', gulpConfig)))
