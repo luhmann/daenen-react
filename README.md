@@ -44,7 +44,7 @@ It will build all frontend-dependencies and update them once you change anything
 
 # Updating your profile
 
-The data for your profiles comes is contained in a json-file in `client/javascripts/json`. You can add and change the
+The data of your profile is contained in a json-file in `client/javascripts/json`. You can add and change the
 data-structures there to quickly update the page.
 
 
