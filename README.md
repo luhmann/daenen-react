@@ -3,14 +3,14 @@
 This is the small website for www.daenen4.de. It is a fully isomorphic React-JS-App that runs on a NodeJS/Koa-Stack 
 ...in other words it's complete overkill for its purpose. It is supposed to be a fun learning experience.
 
-## Depenencies
+## Dependencies
 
 The singular hard dependency in order to compile, develop and deploy the app is a working NodeJs-Stack (a minimum
-node Version of 0.12.0 is required. If you have none you can install it on a Mac by executing:
+node version of `0.12.0` is required. If you have none you can install it on OSX using Homebrew: 
 
 > brew install node
 
-This will install the current nodejs package, the `node`- and `npm`-binaries should now be available. If your
+This will install the NodeJs package currently in homebrew, the `node`- and `npm`-binaries should now be available. If your
 version is less than `0.12.0` you can install the `n`-version manager:
 
 > npm install -g n
@@ -20,7 +20,7 @@ Afterwards execute
 > n latest
 
 to get the latest and finest version of node. You can also install a specific version of node, see the `n`-help for
-more information.
+more information. You could also use nvm for the same purposes.
 
 
 # Installation
@@ -29,15 +29,18 @@ Install all required dependencies:
 
 > npm install
 
-You can then run a local web server for your development needs:
+You can now run a local web server for your development needs:
 
 > npm run server:dev
 
-This server includes a file-watcher which reinitializes the server on any file changes.
+The development-server should now be available at `http://localhost:3000`. This server includes a file-watcher which 
+re-initializes the server on any file changes.
 
 In order to see changes within the content, you need to run the frontend files watcher:
 
 > npm run watch
+
+It will build all frontend-dependencies and update them once you change anything.
 
 # Updating your profile
 
