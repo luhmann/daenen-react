@@ -77,15 +77,17 @@ Add near the end of statements
 
 * `vim /etc/init/daenen.conf`
 
-> author          "Jan Florian Dietrich"
-> description     "daenen-react"
-> setuid          "www-data"
->
-> start on (local-filesystems and net-device-up IFACE=venet0:0)
-> stop on shutdown
->
-> respawn
-> console log
-> env NODE_ENV=production
->
-> exec /usr/local/bin/node --harmony /srv/www/daenen-react/current/app.js
+```shell
+author          "Jan Florian Dietrich"
+description     "daenen-react"
+setuid          "www-data"
+  
+start on (local-filesystems and net-device-up IFACE=venet0:0)
+stop on shutdown
+  
+respawn
+console log
+env NODE_ENV=production
+  
+exec /usr/local/bin/node --harmony /srv/www/daenen-react/current/app.js
+``` 
