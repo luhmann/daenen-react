@@ -20,7 +20,7 @@ Afterwards execute
 > n latest
 
 to get the latest and finest version of node. You can also install a specific version of node, see the `n`-help for
-more information. You could also use nvm for the same purposes.
+more information. You could also use nvm for the same purpose.
 
 
 # Installation
@@ -44,7 +44,7 @@ It will build all frontend-dependencies and update them once you change anything
 
 # Updating your profile
 
-The data contained in your profiles comes from a json-file in `client/javascripts/json`. You can add and change the
+The data for your profiles comes is contained in a json-file in `client/javascripts/json`. You can add and change the
 data-structures there to quickly update the page.
 
 
