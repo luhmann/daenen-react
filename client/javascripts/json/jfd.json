@@ -114,7 +114,7 @@
         "HTML5/XHTML/WebComponents",
         "CSS/Preprocessors/Libs (CSS3, SASS, Compass, Bourbon, Bitters, Less, Stylus)",
         "JavaScript/ES5/ES6/NodeJS/io.js",
-        "Javascript Frameworks (AngularJS, Flux + React, Backbone.js, Ember.js, Mithril)",
+        "Javascript Frameworks (AngularJS/Angular2, ReactJS/Flux/Reactive, Polymer, Backbone.js, Ember.js, Mithril)",
         "Design Patterns (Mobile First, Responsive/Adaptive Design, Grid Systems, Information Architecture)",
         "Testing (PHPUnit, Jasmine, Mocha, Karma, CasperJS, Sinon, Behat, Selenium)",
         "Build Tools (Grunt, Gulp, Jenkins, Ant)",
