@@ -26,6 +26,12 @@
     ],
     "projects": [
         {
+            "client": "ePost Development GmbH",
+            "description": "Full-Stack-Development for mail-portal using Scala, Groovy, AngularJS",
+            "link": "http://www.epost.de",
+            "screenshots": null
+        },
+        {
             "client": "MyVideo / ProSiebenSat1 Digital",
             "description": "Frontend & Mobile Development for the MyVideo online video platform",
             "link": "http://www.myvideo.de",
