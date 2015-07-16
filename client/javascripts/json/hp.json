@@ -38,6 +38,12 @@
     ],
     "projects": [
         {
+            "client": "ImmobilienScout24",
+            "description": "Developing data-driven products using Scala, Play and Elastic",
+            "link": "http://www.immobilienscout24.de/",
+            "screenshots": null
+        },
+        {
             "client": "MyVideo Broadband S.R.L.",
             "description": "Development of backend systems for the MyVideo online video platform",
             "link": "http://www.myvideo.de",
