@@ -5,6 +5,6 @@ const mountNode = document.getElementById('layout');
 var modernizr = require('../../vendors/modernizr');
 
 
-Router.run(getRoutes(), Router.HistoryLocation, function (Handler) {
-    React.render(<Handler />, mountNode);
-});
+// Router.run(getRoutes(), Router.HistoryLocation, function (Handler) {
+//     React.render(<Handler />, mountNode);
+// });

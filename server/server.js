@@ -4,7 +4,7 @@ var serve = require('koa-static');
 var compress = require('koa-compress');
 var fs = require('fs');
 var React = require('react');
-var Router = require('react-router');
+var Router = require('react-router').Router;
 var getRoutes = require('./routes');
 var indexHTML = fs.readFileSync(__dirname+'/../client/index.html').toString();
 var koa = module.exports = require('koa');
