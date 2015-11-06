@@ -1,32 +1,37 @@
-const React = require('react');
-var slugify = require("underscore.string/slugify");
-var Link = require('./link');
-var ElementWithLabel = require('./elementWithLabel');
-var TransitionGroup = require('react/lib/ReactCSSTransitionGroup');
+import React from 'react';
+import CSSModules from 'react-css-modules';
+import styles from '../../stylesheets/modules/projectList.styl';
 
+import slugify from 'underscore.string/slugify';
+import Link from './Link';
+import ElementWithLabel from './ElementWithLabel';
+import TransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
-var Screenshot = React.createClass({
-    render: function () {
+@CSSModules(styles)
+class Screenshot extends React.Component {
+    render() {
         return (
-            <a className="project--sceenshots-shot" href={ this.props.url } title={ this.props.title }>
+            <a styleName="project--sceenshots-shot" href={ this.props.url } title={ this.props.title }>
                 Screenshots
             </a>
         );
     }
-});
+};
 
-var Project = React.createClass({
-    componentDidMount: function () {
+@CSSModules(styles)
+class Project extends React.Component {
+    componentDidMount() {
         // require here so it does not get included on server-side rendering
-        var Lightbox = require('lightbox');
-        Lightbox.run('.' + slugify(this.props.data.client) + this.props.index);
-    },
-    render: function () {
+        // var Lightbox = require('lightbox');
+        // Lightbox.run('.' + slugify(this.props.data.client) + this.props.index);
+    }
+
+    render() {
         var client;
         var screenshots;
 
         if (this.props.data.link) {
-            client = function (scope) {
+            client = (scope) => {
                 return (
                     <Link url={ scope.props.data.link } title={ scope.props.data.client } target="_blank" >
                         { scope.props.data.client }
@@ -46,70 +51,73 @@ var Project = React.createClass({
 
             screenshots = function (client, screenshots, index) {
                 return (
-                    <span className={"project--screenshots " + slugify(client) +  index}>[{ screenshots }]</span>
+                    <span className="{slugify(client) +  index}">[{ screenshots }]</span>
                 );
             }(this.props.data.client, screenshots, this.props.index);
 
         }
 
         return (
-            <div className="project">
-                <span className="project--client">{ client }</span>
-                <span className="project--description">({ this.props.data.description })</span>
+            <div>
+                <span styleName="project--client">{ client }</span>
+                <span styleName="project--description">({ this.props.data.description })</span>
             { screenshots }
             </div>
         );
     }
-});
+};
 
-var MoreButton = React.createClass({
-    render: function () {
+@CSSModules(styles)
+class MoreButton extends React.Component {
+    render() {
         return (
-            <Link className="more" url="#" onClick={ this.props.callback }>{ this.props.text }</Link>
+            <Link styleName="more" url="#" onClick={ this.props.callback }>{ this.props.text }</Link>
         );
     }
-});
+};
 
-var ProjectList = React.createClass({
-    getInitialState: function () {
-        return {
-            hideAdditionalItems: true,
-            moreButtonText: 'More Projects'
-        };
-    },
-    renderProjects: function () {
+@CSSModules(styles)
+export default class ProjectList extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        hideAdditionalItems: true,
+        moreButtonText: 'More Projects'
+      }
+    }
+
+    renderProjects() {
         var projects = this.props.projects;
 
         if (this.state.hideAdditionalItems === true) {
             projects = projects.slice(0, 4);
         }
 
-        return projects.map(function (project, index) {
+        return projects.map((project, index) => {
             return(
                 <li><Project data={ project } key={ this.props.dev + index } index={ index } /></li>
             );
         }, this);
-    },
-    handleMoreButtonClick: function (event) {
+    }
+
+    handleMoreButtonClick = (event) => {
         event.preventDefault();
         this.setState( { hideAdditionalItems: !this.state.hideAdditionalItems } );
-    },
-    getMoreButtonText: function () {
+    }
+
+    getMoreButtonText() {
         return (this.state.hideAdditionalItems) ? 'More Projects' : 'Less Projects'
-    },
-    render: function () {
+    }
+
+    render() {
         return (
-            <div className="projectlist">
+            <div>
                 <ElementWithLabel label="Clients and Projects"></ElementWithLabel>
                 <ul>
-                    <TransitionGroup transitionName="projects">
-                        { this.renderProjects() }
-                    </TransitionGroup>
+                    { this.renderProjects() }
                 </ul>
                 <MoreButton callback={ this.handleMoreButtonClick } text={ this.getMoreButtonText() }/>
             </div>
         );
     }
-});
-
-module.exports = ProjectList;
+};

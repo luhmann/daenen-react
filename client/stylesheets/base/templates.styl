@@ -1,0 +1,29 @@
+@require "variables"
+
+glowing-box-shadow()
+    box-shadow: content-box-shadow
+
+content-box()
+    glowing-box-shadow()
+    background: content-background-color
+    margin-top: 1.46154em
+    overflow: hidden
+    position: relative
+
+    .is-beam &
+        box-shadow: beam-box-shadow
+
+.is-hidden
+    display: none
+
+section()
+    margin-top: 1.46153846153846em
+    margin-bottom: 1.46153846153846em
+    max-width: 500px
+
+    &:first-child
+        margin-top: 0
+
+.link + .link
+    &:before
+        content: ', '

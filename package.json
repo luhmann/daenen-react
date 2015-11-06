@@ -17,9 +17,12 @@
     "extract-text-webpack-plugin": "^0.9.0",
     "flightplan": "^0.6.0",
     "html-webpack-plugin": "^1.6.2",
+    "json-loader": "^0.5.3",
+    "munge": "^0.1.4",
     "react-transform-hmr": "^1.0.1",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.2",
+    "underscore.string": "^3.2.2",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1",
     "webpack-merge": "^0.2.0"
