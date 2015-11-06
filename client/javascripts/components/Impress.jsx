@@ -1,10 +1,10 @@
-const React = require('react');
-const MailtoLink = require('./mailtoLink');
-const ElementWithLabel = require('./elementWithLabel');
-const jfd = require('../json/jfd.json');
+import React from 'react';
+import MailtoLink from './MailtoLink';
+import ElementWithLabel from './ElementWithLabel';
+import jfd from '../json/jfd.json';
 
-var Impress = React.createClass({
-    render: function () {
+export default class Impress extends React.Component {
+    render() {
         return (
             <div className="impress">
                 <div className="impress--title">Impressum</div>
@@ -39,6 +39,4 @@ var Impress = React.createClass({
             </div>
         );
     }
-});
-
-module.exports = Impress;
+};

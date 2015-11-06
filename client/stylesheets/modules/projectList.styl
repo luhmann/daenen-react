@@ -1,0 +1,29 @@
+.project--client, .project--description
+    &:after
+        content: ' '
+
+.project--sceenshots-shot
+    display: none
+
+    &:first-of-type
+        display: inline
+
+// React Animations
+.projects-enter
+    opacity: 0.01
+    transition: opacity .5s ease-in
+
+
+.projects-enter.projects-enter-active
+    opacity: 1
+
+.projects-leave
+    opacity: 1
+    transition: opacity .5s ease-out
+
+
+.projects-leave.projects-leave-active
+    opacity: 0.01
+
+.more
+    font-weight: bold

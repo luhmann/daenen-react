@@ -1,7 +1,7 @@
-const React = require('react');
+import React from 'react';
 
-var Link = React.createClass({
-    render: function () {
+export default class Link extends React.Component {
+    render() {
         var classes = ['link'];
 
         if (this.props.className) {
@@ -14,6 +14,4 @@ var Link = React.createClass({
             </a>
         );
     }
-});
-
-module.exports = Link;
+}

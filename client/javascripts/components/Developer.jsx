@@ -1,23 +1,26 @@
-const React = require('react');
-var Link = require('./link');
-var ElementWithLabel = require('./elementWithLabel');
-var ProjectList = require('./projectList');
-const MailtoLink = require('./mailtoLink');
+import React from 'react';
+import CSSModules from 'react-css-modules';
+import styles from '../../stylesheets/modules/developer.styl';
 
-var DeveloperSection = React.createClass({
-    render: function () {
+import Link from './Link';
+import ElementWithLabel from './ElementWithLabel';
+import ProjectList from './ProjectList';
+import MailtoLink from './MailtoLink';
+
+@CSSModules(styles)
+class DeveloperSection extends React.Component {
+    render() {
         return (
-            <div className="developer--section">
+            <div styleName="developer--section">
                 { this.props.children }
             </div>
         );
     }
-});
+};
 
-
-var Developer = React.createClass({
-    render: function () {
-
+@CSSModules(styles)
+export default class Developer extends React.Component {
+    render() {
         var externalLinks = this.props.data.externalLinks.map(function (row) {
             return (
                 <ElementWithLabel label={ row.label } key={row.label} >
@@ -45,10 +48,10 @@ var Developer = React.createClass({
         }(this.props.data.additional);
 
         return (
-            <div className="developer" key={ this.props.data.id } >
+            <div styleName="developer" key={ this.props.data.id } >
                 <DeveloperSection key="name">
-                    <h3 className="developer--name">{ this.props.data.name }</h3>
-                    <div className="developer--job-title">{ this.props.data.jobTitle }</div>
+                    <h3 styleName="developer--name">{ this.props.data.name }</h3>
+                    <div styleName="developer--job-title">{ this.props.data.jobTitle }</div>
                 </DeveloperSection>
 
                 <DeveloperSection key="contact">
@@ -90,6 +93,4 @@ var Developer = React.createClass({
             </div>
         );
     }
-});
-
-module.exports = Developer;
+};

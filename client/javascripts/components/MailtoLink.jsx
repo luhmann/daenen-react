@@ -1,8 +1,9 @@
-const React = require('react');
+import React from 'react';
+import CSSModules from 'react-css-modules';
 const munge = require('munge');
 
-var MailtoLink = module.exports = React.createClass({
-    render: function () {
+export default class Header extends React.Component {
+    render() {
         var url = munge(this.props.email);
         var href = 'mailto:' + url;
         var classes = 'link';
@@ -16,5 +17,4 @@ var MailtoLink = module.exports = React.createClass({
             <span dangerouslySetInnerHTML={{__html: rawMarkup }} />
         );
     }
-});
-
+};
