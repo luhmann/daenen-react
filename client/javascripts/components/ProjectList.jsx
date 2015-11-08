@@ -2,30 +2,12 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import styles from '../../stylesheets/modules/projectList.styl';
 
-import slugify from 'underscore.string/slugify';
 import Link from './Link';
 import ElementWithLabel from './ElementWithLabel';
 import TransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
 @CSSModules(styles)
-class Screenshot extends React.Component {
-    render() {
-        return (
-            <a styleName="project--sceenshots-shot" href={ this.props.url } title={ this.props.title }>
-                Screenshots
-            </a>
-        );
-    }
-};
-
-@CSSModules(styles)
 class Project extends React.Component {
-    componentDidMount() {
-        // require here so it does not get included on server-side rendering
-        // var Lightbox = require('lightbox');
-        // Lightbox.run('.' + slugify(this.props.data.client) + this.props.index);
-    }
-
     render() {
         var client;
         var screenshots;
@@ -40,21 +22,6 @@ class Project extends React.Component {
             }(this);
         } else {
             client = this.props.data.client;
-        }
-
-        if (this.props.data.screenshots) {
-            screenshots = this.props.data.screenshots.map(function (shot, index) {
-                return (
-                    <Screenshot client={ this.props.data.client } title={ shot.title } url={ shot.url } key={ this.props.data.client + index}/>
-                );
-            }, this);
-
-            screenshots = function (client, screenshots, index) {
-                return (
-                    <span className="{slugify(client) +  index}">[{ screenshots }]</span>
-                );
-            }(this.props.data.client, screenshots, this.props.index);
-
         }
 
         return (
@@ -86,7 +53,7 @@ export default class ProjectList extends React.Component {
       }
     }
 
-    renderProjects() {
+    renderProjects = () => {
         var projects = this.props.projects;
 
         if (this.state.hideAdditionalItems === true) {

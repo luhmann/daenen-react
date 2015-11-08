@@ -13,6 +13,15 @@
                     "text": "Xing"
                 }
             ]
+        },
+        {
+          "label": "Programming",
+          "links": [
+            {
+              "url": "https://github.com/luhmann",
+              "text": "Github"
+            }
+          ]
         }
     ],
     "qualification": [
@@ -28,89 +37,52 @@
         {
             "client": "ePost Development GmbH",
             "description": "Full-Stack-Development for mail-portal using Scala, Groovy, AngularJS",
-            "link": "http://www.epost.de",
-            "screenshots": null
+            "link": "http://www.epost.de"
         },
         {
             "client": "MyVideo / ProSiebenSat1 Digital",
             "description": "Frontend & Mobile Development for the MyVideo online video platform",
-            "link": "http://www.myvideo.de",
-            "screenshots": null
+            "link": "http://www.myvideo.de"
         },
         {
             "client": "Evinum",
             "description": "Development of an information retrieval and management system for wine data",
-            "link": "http://www.evinum.de",
-            "screenshots": null
+            "link": "http://www.evinum.de"
         },
         {
             "client": "tape.tv & SPIEGELOnline",
             "description": "Facebook-App-Development with OpenGraph-API",
-            "link": null,
-            "screenshots": [
-                {
-                    "title": "Facebook-App: Auf den Dächern Festival 01/02",
-                    "url": "/images/flo/tape_tv_spon_add_festival_1.jpg"
-                },
-                {
-                    "title": "Facebook-App: Auf den Dächern Festival 02/02",
-                    "url": "/images/flo/tape_tv_spon_add_festival_2.jpg"
-                }
-            ]
+            "link": null
         },
         {
             "client": "Home24",
             "description": "Shop-Development with Zend Framework",
-            "link": "http://www.home24.de",
-            "screenshots": null
+            "link": "http://www.home24.de"
         },
         {
             "client": "Globus Deutschland",
             "description": "Module-Development in yii/PHP5",
-            "link": "http://www.globus.de",
-            "screenshots": null
+            "link": "http://www.globus.de"
         },
         {
             "client": "Wir sind Helden",
             "description": "Wordpress-Development for Band-Webpage",
-            "link": "http://www.wirsindhelden.de",
-            "screenshots": null
+            "link": "http://www.wirsindhelden.de"
         },
         {
             "client": "Weitclick",
             "description": "Projects involving PHP/yii/JQuery/jQTouch",
-            "link": "http://www.weitclick.de",
-            "screenshots": null
+            "link": "http://www.weitclick.de"
         },
         {
             "client": "MDT24",
             "description": "Drupal 6 Development for a travel insurance broker",
-            "link": "http://www.mdt24.de/",
-            "screenshots": [
-                {
-                    "title": "MDT – Makler der Touristik 01/02",
-                    "url": "/images/flo/mdt_01.jpg"
-                },
-                {
-                    "title": "MDT – Makler der Touristik 02/02",
-                    "url": "/images/flo/mdt_02.jpg"
-                }
-            ]
+            "link": "http://www.mdt24.de/"
         },
         {
             "client": "Bananenbiegerei",
             "description": "Wordpress Development for graphic design portfolio",
-            "link": "http://www.bananenbiegerei.de/",
-            "screenshots": [
-                {
-                    "title": "Bananenbiegerei – Design Portfolio 01/02",
-                    "url": "/images/flo/bb_01.jpg"
-                },
-                {
-                    "title": "Bananenbiegerei – Design Portfolio 02/02",
-                    "url": "/images/flo/bb_02.jpg"
-                }
-            ]
+            "link": "http://www.bananenbiegerei.de/"
         }
     ],
     "technologies": [
