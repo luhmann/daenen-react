@@ -3,11 +3,13 @@ var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var merge = require('webpack-merge');
+var autoprefixer = require('autoprefixer');
+var Clean = require('clean-webpack-plugin')
 
-var TARGET = process.env.npm_lifecycle_event;
-var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(ROOT_PATH, 'client', 'javascripts');
-var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
+const TARGET = process.env.npm_lifecycle_event;
+const ROOT_PATH = path.resolve(__dirname);
+const APP_PATH = path.resolve(ROOT_PATH, 'client', 'javascripts');
+const BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 process.env.BABEL_ENV = TARGET;
 
@@ -45,7 +47,7 @@ var common = {
       {
         test: /\.svg$/,
         loaders: ['file'],
-        include: path.resolve(ROOT_PATH, 'client', 'images') 
+        include: path.resolve(ROOT_PATH, 'client', 'images')
       },
     ]
   },
@@ -90,8 +92,7 @@ if (TARGET === 'build') {
       loaders: [
         {
           test: /\.styl$/,
-          loader: ExtractTextPlugin.extract('style', 'css!postcss!stylus'),
-          include: APP_PATH
+          loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus')
         }
       ]
     },
@@ -99,7 +100,6 @@ if (TARGET === 'build') {
     plugins: [
       new Clean(['build']),
       new ExtractTextPlugin('styles.css?[chunkhash]'),
-      new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(de)$/),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
