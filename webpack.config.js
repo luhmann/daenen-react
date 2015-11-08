@@ -42,6 +42,11 @@ var common = {
         loaders: ['json'],
         include: APP_PATH
       },
+      {
+        test: /\.svg$/,
+        loaders: ['file'],
+        include: path.resolve(ROOT_PATH, 'client', 'images') 
+      },
     ]
   },
   plugins: []
