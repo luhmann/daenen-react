@@ -30,7 +30,10 @@
     "webpack-merge": "^0.2.0"
   },
   "dependencies": {
+    "babel-core": "^6.1.2",
+    "hapi": "^11.1.0",
     "history": "^1.13.0",
+    "inert": "^3.2.0",
     "react": "^0.14.2",
     "react-css-modules": "^3.6.1",
     "react-dom": "^0.14.2",

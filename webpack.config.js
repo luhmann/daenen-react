@@ -9,7 +9,7 @@ var Clean = require('clean-webpack-plugin')
 const TARGET = process.env.npm_lifecycle_event;
 const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH, 'client', 'javascripts');
-const BUILD_PATH = path.resolve(ROOT_PATH, 'build');
+const BUILD_PATH = path.resolve(ROOT_PATH, 'public');
 
 process.env.BABEL_ENV = TARGET;
 
@@ -98,8 +98,15 @@ if (TARGET === 'build') {
     },
     postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     plugins: [
-      new Clean(['build']),
+      new Clean(['public']),
       new ExtractTextPlugin('styles.css?[chunkhash]'),
+      new HtmlwebpackPlugin({
+        title: 'Softwarehaus Dänen4',
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true
+        }
+      }),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
