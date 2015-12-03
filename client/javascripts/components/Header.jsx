@@ -1,11 +1,12 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
+import CSSModuleConfig from '../config/cssModules.js';
 import { IndexLink } from 'react-router';
 import styles from '../../stylesheets/modules/header.styl'
 
 import logo from '../../images/logo.svg'
 
-@CSSModules(styles)
+@CSSModules(styles, CSSModuleConfig)
 export default class Header extends React.Component {
   render() {
     return (

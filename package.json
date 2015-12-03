@@ -6,7 +6,9 @@
   "repository": "https://github.com/luhmann/daenen-react.git",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "build-backend-dev": "webpack --config webpack.config.server.js --watch",
+    "watch-server": "nodemon ./public/server.js"
   },
   "author": "Jan Florian Dietrich",
   "license": "ISC",
@@ -29,9 +31,11 @@
     "html-webpack-plugin": "^1.6.2",
     "json-loader": "^0.5.3",
     "munge": "^0.1.4",
+    "nodemon": "^1.8.1",
     "react-transform-hmr": "^1.0.1",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.2",
+    "template-string-loader": "0.0.3",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1",
     "webpack-merge": "^0.3.2"

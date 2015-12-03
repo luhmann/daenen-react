@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import getRoutes from './config/routes.jsx';
+import App from './components/App';
 import '../stylesheets/base/reset.styl';
 
 main()
 
 function main() {
-  const app = document.createElement('div');
+  const app = document.querySelector('.base');
+  app.innerHTML = '';
   app.style.height = "100%"
-  document.body.appendChild(app);
 
-  ReactDOM.render(getRoutes(), app);
+  ReactDOM.render(<App/>, app);
 }
