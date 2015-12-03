@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
+<html{% if(o.htmlWebpackPlugin.files.manifest) { %} manifest="{%= o.htmlWebpackPlugin.files.manifest %}"{% } %}>
+  <head>
+    <meta charset="UTF-8">
     <meta content="initial-scale=1.0, width=device-width" name="viewport">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <title>Softwarehaus Dänen4</title>
-
-    <link rel="stylesheet" href="stylesheets/app.css" type="text/css" media="screen">
-    <link rel="shortcut icon" href="favicon.ico">
-</head>
-<body id="layout" class="layout ¡LAYOUT-CLASS!">
-    ¡HTML!
-    <script src="javascripts/app.js"></script>
-</body>
+    <title>{%=o.htmlWebpackPlugin.options.title || 'Webpack App'%}</title>
+    {% if (o.htmlWebpackPlugin.files.favicon) { %}
+    <link rel="shortcut icon" href="{%=o.htmlWebpackPlugin.files.favicon%}">
+    {% } %}
+    {% for (var css in o.htmlWebpackPlugin.files.css) { %}
+    <link href="/static/{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+    {% } %}
+  </head>
+  <body>
+    <div class="base">
+      ${scope.html}
+    </div>
+    {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+    <script src="/static/{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+    {% } %}
+  </body>
 </html>

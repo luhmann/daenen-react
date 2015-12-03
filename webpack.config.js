@@ -10,9 +10,9 @@ const TARGET = process.env.npm_lifecycle_event;
 const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH, 'client', 'javascripts');
 const BUILD_PATH = path.resolve(ROOT_PATH, 'public');
-// const SERVER_PATH = path.resolve(ROOT_PATH, 'server')
 
 process.env.BABEL_ENV = TARGET;
+process.env.BROWSER = true;
 
 var common = {
   entry: APP_PATH,
@@ -77,7 +77,7 @@ if (TARGET === 'start' || !TARGET) {
     plugins: [
       new ExtractTextPlugin('app.css', { allChunks: true }),
       new webpack.HotModuleReplacementPlugin(),
-      new HtmlwebpackPlugin( { title: 'Softwarehaus Dänen4'} )
+      new HtmlwebpackPlugin( { title: 'Softwarehaus Dänen4', template: 'client/index.html' } )
     ]
   })
 }
@@ -103,9 +103,10 @@ if (TARGET === 'build') {
       new ExtractTextPlugin('styles.css?[chunkhash]'),
       new HtmlwebpackPlugin({
         title: 'Softwarehaus Dänen4',
+        template: 'client/index.html',
         minify: {
           removeComments: true,
-          collapseWhitespace: true
+          collapseWhitespace: true,
         }
       }),
       new webpack.optimize.DedupePlugin(),

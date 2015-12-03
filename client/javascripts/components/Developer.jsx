@@ -1,5 +1,6 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
+import CSSModuleConfig from '../config/cssModules.js';
 import styles from '../../stylesheets/modules/developer.styl';
 
 import Link from './Link';
@@ -7,7 +8,7 @@ import ElementWithLabel from './ElementWithLabel';
 import ProjectList from './ProjectList';
 import MailtoLink from './MailtoLink';
 
-@CSSModules(styles)
+@CSSModules(styles, CSSModuleConfig)
 class DeveloperSection extends React.Component {
     render() {
         return (
@@ -18,7 +19,7 @@ class DeveloperSection extends React.Component {
     }
 };
 
-@CSSModules(styles)
+@CSSModules(styles, CSSModuleConfig)
 export default class Developer extends React.Component {
     render() {
         var externalLinks = this.props.data.externalLinks.map(function (row) {

@@ -1,5 +1,5 @@
 import React from 'react';
-
+// TODO: is this used
 export default class Link extends React.Component {
     render() {
         var classes = ['link'];

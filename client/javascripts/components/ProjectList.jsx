@@ -1,12 +1,13 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
+import CSSModuleConfig from '../config/cssModules.js';
 import styles from '../../stylesheets/modules/projectList.styl';
 
 import Link from './Link';
 import ElementWithLabel from './ElementWithLabel';
 import TransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
-@CSSModules(styles)
+@CSSModules(styles, CSSModuleConfig)
 class Project extends React.Component {
     render() {
         var client;
@@ -35,7 +36,7 @@ class Project extends React.Component {
     }
 };
 
-@CSSModules(styles)
+@CSSModules(styles, CSSModuleConfig)
 class MoreButton extends React.Component {
     render() {
         return (
@@ -44,7 +45,7 @@ class MoreButton extends React.Component {
     }
 };
 
-@CSSModules(styles)
+@CSSModules(styles, CSSModuleConfig)
 export default class ProjectList extends React.Component {
     constructor(props) {
       super(props);
