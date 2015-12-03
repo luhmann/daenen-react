@@ -47,7 +47,7 @@ var common = {
       },
       {
         test: /\.svg$/,
-        loaders: ['file'],
+        loaders: ['url'],
         include: path.resolve(ROOT_PATH, 'client', 'images')
       },
     ]
