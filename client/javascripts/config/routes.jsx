@@ -1,16 +1,19 @@
-var React = require('react');
-var { IndexRoute, Route, Router } = require('react-router');
+import React from 'react';
+import { IndexRoute, Route, Router } from  'react-router';
+import Layout from '../components/Layout';
+import Content from '../components/Content';
+import Impress from '../components/Impress';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 module.exports = () => {
 
     return (
         <Router history={createBrowserHistory()}>
-          <Route path="/" component={ require('../components/Layout') }>
-              <IndexRoute component={ require('../components/Content') }/>
-              <Route path="impress" component={ require('../components/Impress') } />
-              <Route path="impressum" conponent={ require('../components/Impress') } />
-              <Route path="*" component={ require('../components/Content') } />
+          <Route path="/" component={ Layout }>
+              <IndexRoute component={ Content }/>
+                <Route path="impress" component={ Impress } />
+                <Route path="impressum" conponent={ Impress } />
+                <Route path="*" component={ Impress } />
           </Route>
         </Router>
     );
