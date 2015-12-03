@@ -19,7 +19,8 @@ class Project extends React.Component {
                         { scope.props.data.client }
                     </Link>
                 );
-            }(this);
+            }
+            client(this);
         } else {
             client = this.props.data.client;
         }

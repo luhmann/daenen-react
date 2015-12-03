@@ -10,6 +10,7 @@ const TARGET = process.env.npm_lifecycle_event;
 const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH, 'client', 'javascripts');
 const BUILD_PATH = path.resolve(ROOT_PATH, 'public');
+// const SERVER_PATH = path.resolve(ROOT_PATH, 'server')
 
 process.env.BABEL_ENV = TARGET;
 
@@ -42,7 +43,7 @@ var common = {
       {
         test: /\.json$/,
         loaders: ['json'],
-        include: APP_PATH
+        include: [ APP_PATH ]
       },
       {
         test: /\.svg$/,
