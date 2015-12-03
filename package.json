@@ -36,6 +36,7 @@
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.2",
     "template-string-loader": "0.0.3",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1",
     "webpack-merge": "^0.3.2"
