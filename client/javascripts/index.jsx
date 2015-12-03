@@ -8,7 +8,6 @@ main()
 function main() {
   const app = document.querySelector('.base');
   app.innerHTML = '';
-  app.style.height = "100%"
 
   ReactDOM.render(<App/>, app);
 }
