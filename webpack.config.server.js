@@ -54,9 +54,10 @@ module.exports = {
         loaders: ['template-string'],
       },
       {
-        // webpack styles loader only works in a browser env, configure to output empty modules
+        // use css/locals for calculating the css-module styles on the server
+        // @see https://github.com/webpack/css-loader/issues/59
         test: /\.styl$/,
-        loaders: ['null']
+        loader: 'css/locals?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus'
       }
     ]
   },
