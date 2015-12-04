@@ -13,7 +13,7 @@ import template from '../dist/public/index.html';
 
 const app = express();
 const staticDir = path.resolve('dist', 'public');
-const favIconPath = path.resolve('client', 'favicon.ico');
+const favIconPath = path.resolve(staticDir, 'favicon.ico');
 const port = process.env.APP_PORT || 3000;
 
 app.use(compression());
