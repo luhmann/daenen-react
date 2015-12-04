@@ -14,7 +14,7 @@ fs.readdirSync('node_modules')
 
 const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH, 'server');
-const BUILD_PATH = path.resolve(ROOT_PATH, 'public');
+const BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
 
 module.exports = {
   entry: APP_PATH,
