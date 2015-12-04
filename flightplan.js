@@ -25,17 +25,17 @@ plan.local(function(local) {
     if(plan.runtime.target === 'production') {
         var input = local.prompt('Ready for deploying to production? [yes]');
         if (input.indexOf('yes') === -1) {
-            local.abort('user canceled flight'); // this will stop the flightplan right away.
+            plan.abort('user canceled flight'); // this will stop the flightplan right away.
         }
     }
 
     local.log('Copy files to remote hosts');
-    var filesToCopy = local.exec('git ls-files', {silent: true});
-    var buildDir = local.exec('find public -print', {silent: true});
+    local.log('Found these files in "dist"-folder');
+    var filesToCopy = local.find('dist -type f').stdout.split('\n');
+    filesToCopy.push('package.json')
 
     // rsync files to all the target's remote hosts
     local.transfer(filesToCopy, '/tmp/' + config.tmpDir);
-    local.transfer(buildDir, '/tmp/' + config.tmpDir);
 });
 
 // run commands on the target's remote hosts
@@ -45,13 +45,12 @@ plan.remote(function(remote) {
     remote.rm('-rf /tmp/' + config.tmpDir);
 
     remote.log('Install dependencies');
-    remote.exec('npm --production --prefix ' + config.serverBasePath + config.tmpDir
-    + ' install ' + config.serverBasePath + config.tmpDir);
+    remote.exec('node -v');
+    remote.exec('cd ' + config.serverBasePath + config.tmpDir +  ' && npm --production install');
 
     remote.log('Reload application');
     remote.exec('ln -snf ' + config.serverBasePath + config.tmpDir + ' ' + config.serverBasePath + 'current');
-    remote.exec('sudo stop daenen');
-    remote.exec('sudo start daenen');
+    remote.exec('pm2 restart all');
 
     remote.log('Checking for stale releases');
     var releases = getReleases(remote);
@@ -79,4 +78,3 @@ function getReleases(remote) {
 
     return [];
 }
-

@@ -40,110 +40,77 @@
         {
             "client": "ImmobilienScout24",
             "description": "Developing data-driven products using Scala, Play and Elastic",
-            "link": "http://www.immobilienscout24.de/",
-            "screenshots": null
+            "link": "http://www.immobilienscout24.de/"
         },
         {
             "client": "MyVideo Broadband S.R.L.",
             "description": "Development of backend systems for the MyVideo online video platform",
-            "link": "http://www.myvideo.de",
-            "screenshots": null
+            "link": "http://www.myvideo.de"
         },
         {
             "client": "Deutsche Telekom AG",
             "description": "Development of back-end systems for a smart home solution",
-            "link": "https://www.qivicon.com/",
-            "screenshots": null
+            "link": "https://www.qivicon.com/"
         },
         {
             "client": "Bisnode Informatics Germany",
             "description": "Architecture and development of a system to monitor and provide change notifications for company data",
-            "link": "http://www.bisnode.com/",
-            "screenshots": null
+            "link": "http://www.bisnode.com/"
         },
         {
             "client": "Bisnode Informatics Germany",
             "description": "Extension of an administration application for customer data and permissions for D&B Germany",
-            "link": "http://www.bisnode.com/",
-            "screenshots": null
+            "link": "http://www.bisnode.com/"
         },
         {
             "client": "Bisnode Informatics Germany",
             "description": "Extension and CI-compliant adaptation of a company address shop for D&B Germany",
-            "link": "http://www.bisnode.com/",
-            "screenshots": null
+            "link": "http://www.bisnode.com/"
         },
         {
             "client": "Ändrä AG",
             "description": "Development of the translation management system Ontram+ and related components.",
-            "link": "http://www.ontram.de/",
-            "screenshots": null
+            "link": "http://www.ontram.de/"
         },
         {
             "client": "Bisnode Informatics Germany",
             "description": "Architecture and lead development of a process automation system to connect international fulfillment systems and teams.",
-            "link": "http://www.bisnode.com/",
-            "screenshots": null
+            "link": "http://www.bisnode.com/"
         },
         {
             "client": "Bisnode Informatics Germany",
             "description": "Development Lead for a B2B Marketing Address Shop for D&B Germany",
-            "link": "http://www.bisnode.com/",
-            "screenshots": null
+            "link": "http://www.bisnode.com/"
         },
         {
             "client": "Deutsche Post IT Solutions",
             "description": "Interaction Design and Web Development of a Web-based Business System Prototype for Mail Hubs",
-            "link": "http://www.dp-itsolutions.de/",
-            "screenshots": null
+            "link": "http://www.dp-itsolutions.de/"
         },
         {
             "client": "Maris Consulting GmbH",
             "description": "Consulting & Development of Teamsite-based Systems for Bayer Schering Pharma AG",
-            "link": "http://www.maris-consulting.com/",
-            "screenshots": null
+            "link": "http://www.maris-consulting.com/"
         },
         {
             "client": "Shoppero.com GmbH",
             "description": "Development Shoppero.com",
-            "link": null,
-            "screenshots": [
-                {
-                    "title": "Shoppero.com 01/02",
-                    "url": "/images/henning/shoppero1.png"
-                },
-                {
-                    "title": "Shoppero.com  02/02",
-                    "url": "/images/henning/shoppero2.png"
-                }
-            ]
+            "link": null
         },
         {
             "client": "win.rar GmbH",
             "description": "Re-Engineering Intranet Sales Management System",
-            "link": "http://www.win-rar.com/",
-            "screenshots": null
+            "link": "http://www.win-rar.com/"
         },
         {
             "client": "Arvato Systems GmbH",
             "description": "Consulting & Development for MediaFed",
-            "link": "http://www.arvato-systems.de/",
-            "screenshots": [
-                {
-                    "title": "MediaFed Metrics 01/02",
-                    "url": "/images/henning/rssmetrics1.png"
-                },
-                {
-                    "title": "MediaFed Metrics 02/02",
-                    "url": "/images/henning/rssmetrics2.png"
-                }
-            ]
+            "link": "http://www.arvato-systems.de/"
         },
         {
             "client": "Arvato Systems GmbH",
             "description": "Consulting & Development for Sony BMG Music Entertainment",
-            "link": "http://www.arvato-systems.de/",
-            "screenshots": null
+            "link": "http://www.arvato-systems.de/"
         }
     ],
     "technologies": [
