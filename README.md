@@ -1,12 +1,12 @@
 # Website for Softwarehaus Dänen4
 
-This is the small website for www.daenen4.de. It is a fully isomorphic React-JS-App that runs on a NodeJS/Koa-Stack 
+This is the small website for www.daenen4.de. It is a fully isomorphic React-JS-App that runs on a NodeJS/Express-Stack
 ...in other words it's complete overkill for its purpose. It is supposed to be a fun learning experience.
 
 ## Dependencies
 
 The singular hard dependency in order to compile, develop and deploy the app is a working NodeJs-Stack (a minimum
-node version of `0.12.0` is required. If you have none you can install it on OSX using Homebrew: 
+node version of `0.12.0` is required. If you have none you can install it on OSX using Homebrew:
 
 > brew install node
 
@@ -33,7 +33,7 @@ You can now run a local web server for your development needs:
 
 > npm run server:dev
 
-The development-server should now be available at `http://localhost:3000`. This server includes a file-watcher which 
+The development-server should now be available at `http://localhost:3000`. This server includes a file-watcher which
 re-initializes the server on any file changes.
 
 In order to see changes within the content, you need to run the frontend files watcher:
@@ -52,15 +52,15 @@ data-structures there to quickly update the page.
 
 Deployment is done with `flightplan.js`. It is as simple as running:
 
-> fly production 
+> fly production
 
 ...but needs to be set up correctly to function:
- 
+
 * Acquire the correct set of ssh-keys (ask)
 * Put them in `~/.ssh`
-* Add them to ssh-agent: `ssh-add -K /Users/<User>/.ssh/daenen_deploy_rsa` 
+* Add them to ssh-agent: `ssh-add -K /Users/<User>/.ssh/daenen_deploy_rsa`
 * Enter password
-   
+
 
 ## Notes (no need to do this)
 
@@ -81,13 +81,17 @@ Add near the end of statements
 author          "Jan Florian Dietrich"
 description     "daenen-react"
 setuid          "www-data"
-  
+
 start on (local-filesystems and net-device-up IFACE=venet0:0)
 stop on shutdown
-  
+
 respawn
 console log
 env NODE_ENV=production
-  
-exec /usr/local/bin/node --harmony /srv/www/daenen-react/current/app.js
-``` 
+
+exec
+exec /usr/local/bin/node --harmony /srv/www/daenen-react/current/dist/server.js
+```
+#### Log Messages
+
+Log Messages on success and failure can be found at `/var/log/upstart/daenen.log`

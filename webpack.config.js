@@ -1,7 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var merge = require('webpack-merge');
 var autoprefixer = require('autoprefixer');
 var Clean = require('clean-webpack-plugin')
@@ -127,6 +128,7 @@ if (TARGET === 'build-react') {
     postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     plugins: [
       new Clean(['public']),
+      new CopyWebpackPlugin([{ from: 'client/favicon.ico' }]),
       new ExtractTextPlugin('styles.css?[chunkhash]'),
       new HtmlwebpackPlugin({
         title: 'Softwarehaus Dänen4',
