@@ -14,14 +14,13 @@ class Project extends React.Component {
         var screenshots;
 
         if (this.props.data.link) {
-            client = (scope) => {
+            client = function(scope) {
                 return (
                     <Link url={ scope.props.data.link } title={ scope.props.data.client } target="_blank" >
                         { scope.props.data.client }
                     </Link>
                 );
-            }
-            client(this);
+            }(this);
         } else {
             client = this.props.data.client;
         }

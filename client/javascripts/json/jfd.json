@@ -36,7 +36,7 @@
     "projects": [
         {
             "client": "ePost Development GmbH",
-            "description": "Full-Stack-Development for mail-portal using Scala, Groovy, AngularJS",
+            "description": "Full-Stack-Development for mail-portal using AngularJS, Webpack, Scala & Play",
             "link": "http://www.epost.de"
         },
         {
@@ -46,7 +46,7 @@
         },
         {
             "client": "Evinum",
-            "description": "Development of an information retrieval and management system for wine data",
+            "description": "Development of an information retrieval and management system for wine data in Python",
             "link": "http://www.evinum.de"
         },
         {
@@ -91,8 +91,8 @@
         "PHP Frameworks (Symfony 2, Laravel, Zend Framework 2, yii)",
         "HTML5/XHTML/WebComponents",
         "CSS/Preprocessors/Libs (CSS3, SASS, Compass, Bourbon, Bitters, Less, Stylus)",
-        "JavaScript/ES5/ES6/NodeJS/io.js",
-        "Javascript Frameworks (AngularJS/Angular2, ReactJS/Flux/Reactive, Polymer, Backbone.js, Ember.js, Mithril)",
+        "JavaScript/ES5/ES6/NodeJS",
+        "Javascript Frameworks (AngularJS/Angular2, ReactJS/Flux/Redux, Elm, Yolk,Polymer, Ember.js, Mithril)",
         "Design Patterns (Mobile First, Responsive/Adaptive Design, Grid Systems, Information Architecture)",
         "Testing (PHPUnit, Jasmine, Mocha, Karma, CasperJS, Sinon, Behat, Selenium)",
         "Build Tools (Grunt, Gulp, NPM, Jenkins, Ant)",

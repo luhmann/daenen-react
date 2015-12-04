@@ -5,10 +5,14 @@
   "main": "server.js",
   "repository": "https://github.com/luhmann/daenen-react.git",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
-    "build-backend-dev": "webpack --config webpack.config.server.js --watch",
-    "watch-server": "nodemon ./public/server.js"
+    "start-react": "webpack-dev-server",
+    "watch-react": "webpack --watch",
+    "build-react": "webpack",
+    "watch-server": "webpack --config webpack.config.server.js --watch",
+    "build-server": "webpack --config webpack.config.server.js",
+    "nodemon-server": "nodemon ./dist/server.js",
+    "start": "NODE_ENV=DEBUG concurrent --kill-others \"npm run watch-server\" \"npm run nodemon-server\" \"npm run watch-react\"",
+    "build": "NODE_ENV=PROD npm run build-react && npm run build-server"
   },
   "author": "Jan Florian Dietrich",
   "license": "ISC",
@@ -24,7 +28,9 @@
     "babel-preset-react": "^6.1.18",
     "babel-preset-stage-0": "^6.1.18",
     "clean-webpack-plugin": "^0.1.4",
+    "concurrently": "^1.0.0",
     "css-loader": "^0.23.0",
+    "express-robots": "^0.1.5",
     "extract-text-webpack-plugin": "^0.9.0",
     "file-loader": "^0.8.4",
     "flightplan": "^0.6.0",
@@ -42,12 +48,14 @@
     "webpack-merge": "^0.3.2"
   },
   "dependencies": {
+    "compression": "^1.6.0",
     "history": "^1.13.0",
     "inert": "^3.2.0",
     "react": "^0.14.2",
     "react-css-modules": "^3.6.1",
     "react-dom": "^0.14.2",
-    "react-router": "^1.0.0"
+    "react-router": "^1.0.0",
+    "serve-favicon": "^2.3.0"
   },
   "engines": {
     "node": ">=5.0.0"

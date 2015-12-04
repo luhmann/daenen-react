@@ -1,17 +1,26 @@
 import path from 'path';
 import express from 'express';
+import compression from 'compression';
+import favicon from 'serve-favicon';
+import robots from 'express-robots';
+
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RoutingContext } from 'react-router';
-import createLocation            from 'history/lib/createLocation';
 import routes from '../client/javascripts/config/routes.jsx';
-import template from '../public/index.html';
+
+import template from '../dist/public/index.html';
 
 const app = express();
-const staticDir = path.resolve(__dirname, '..', 'public');
+const staticDir = path.resolve('dist', 'public');
+const favIconPath = path.resolve('client', 'favicon.ico');
 const port = process.env.APP_PORT || 3000;
 
-app.use('/static', express.static('public'));
+app.use(compression());
+app.use(favicon(favIconPath));
+app.use(robots({ UserAgent: '*', Disallow: '' }))
+app.use('/static', express.static(staticDir));
+
 app.use((req, res) => {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
       if (error) {

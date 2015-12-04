@@ -9,7 +9,7 @@ var Clean = require('clean-webpack-plugin')
 const TARGET = process.env.npm_lifecycle_event;
 const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH, 'client', 'javascripts');
-const BUILD_PATH = path.resolve(ROOT_PATH, 'public');
+const BUILD_PATH = path.resolve(ROOT_PATH, 'dist', 'public');
 
 process.env.BABEL_ENV = TARGET;
 process.env.BROWSER = true;
@@ -55,7 +55,7 @@ var common = {
   plugins: []
 }
 
-if (TARGET === 'start' || !TARGET) {
+if (TARGET === 'start-react' || !TARGET) {
   module.exports = merge(common, {
     devtool: 'source-map',
     devServer: {
@@ -77,12 +77,39 @@ if (TARGET === 'start' || !TARGET) {
     plugins: [
       new ExtractTextPlugin('app.css', { allChunks: true }),
       new webpack.HotModuleReplacementPlugin(),
-      new HtmlwebpackPlugin( { title: 'Softwarehaus Dänen4', template: 'client/index.html' } )
+      new HtmlwebpackPlugin(
+        {
+          title: 'Softwarehaus Dänen4',
+          template: 'client/index-dev.html'
+        })
     ]
   })
 }
 
-if (TARGET === 'build') {
+if (TARGET === 'watch-react') {
+  module.exports = merge(common, {
+    devtool: 'source-map',
+    module: {
+      loaders: [
+        {
+          test: /\.styl$/,
+          loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus')
+        }
+      ]
+    },
+    plugins: [
+      new ExtractTextPlugin('app.css', { allChunks: true }),
+      new webpack.HotModuleReplacementPlugin(),
+      new HtmlwebpackPlugin(
+        {
+          title: 'Softwarehaus Dänen4',
+          template: 'client/index.html'
+        })
+    ]
+  })
+}
+
+if (TARGET === 'build-react') {
   module.exports = merge(common, {
     output: {
       path: BUILD_PATH,
