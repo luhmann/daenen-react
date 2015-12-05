@@ -127,7 +127,7 @@ if (TARGET === 'build-react') {
     },
     postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     plugins: [
-      new Clean(['public']),
+      new Clean(['dist']),
       new CopyWebpackPlugin([{ from: 'client/favicon.ico' }]),
       new ExtractTextPlugin('styles.css?[chunkhash]'),
       new HtmlwebpackPlugin({
