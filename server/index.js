@@ -15,11 +15,12 @@ const app = express();
 const staticDir = path.resolve('dist', 'public');
 const favIconPath = path.resolve(staticDir, 'favicon.ico');
 const port = process.env.APP_PORT || 3000;
+const staticConf = express.static(staticDir, { maxAge: '60 days'});
 
 app.use(compression());
 app.use(favicon(favIconPath));
 app.use(robots({ UserAgent: '*', Disallow: '' }))
-app.use('/static', express.static(staticDir));
+app.use('/static', staticConf);
 
 app.use((req, res) => {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
