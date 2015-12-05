@@ -1,26 +1,25 @@
 # Website for Softwarehaus Dänen4
 
-This is the small website for www.daenen4.de. It is a fully isomorphic React-JS-App that runs on a NodeJS/Express-Stack
+This is the small website for www.daenen4.de. It is a fully isomorphic/universal React-JS-App that runs on a NodeJS/Express-Stack
 ...in other words it's complete overkill for its purpose. It is supposed to be a fun learning experience.
 
 ## Dependencies
 
-The singular hard dependency in order to compile, develop and deploy the app is a working NodeJs-Stack (a minimum
-node version of `0.12.0` is required. If you have none you can install it on OSX using Homebrew:
+The singular hard dependency in order to compile, develop and deploy the app is a working NodeJs-Stack (a minimum node version of `5.1.1` is required. If you have none you can install it on OSX using Homebrew:
 
 > brew install node
 
-This will install the NodeJs package currently in homebrew, the `node`- and `npm`-binaries should now be available. If your
-version is less than `0.12.0` you can install the `n`-version manager:
+This will install the NodeJs package currently in homebrew, the `node`- and `npm`-binaries should now be available. If your version is less than `5.1.1` you can install the `n`-version manager:
 
 > npm install -g n
 
 Afterwards execute
 
-> n latest
+> n 5.1.1
 
-to get the latest and finest version of node. You can also install a specific version of node, see the `n`-help for
-more information. You could also use nvm for the same purpose.
+to get the this exact version of node. See the `n`-help for more information. You could also use nvm for the same purpose.
+
+If you plan on doing a lot of stuff with node consider using [nvm](https://github.com/creationix/nvm)
 
 
 # Installation
@@ -29,18 +28,17 @@ Install all required dependencies:
 
 > npm install
 
-You can now run a local web server for your development needs:
+You can now run the real application server for development:
 
-> npm run server:dev
+> npm start
 
-The development-server should now be available at `http://localhost:3000`. This server includes a file-watcher which
-re-initializes the server on any file changes.
+This will start up two concurrent webpack-watchers that constantly compile the frontend-files and the express-application server and a nodemon-watcher that looks for changes on the express-server and reloads it. The development-server should now be available at `http://localhost:3000`.
 
-In order to see changes within the content, you need to run the frontend files watcher:
+If you want to take advantage of features webpack-dev-server offers you can also run:
 
-> npm run watch
+> npm run start-react
 
-It will build all frontend-dependencies and update them once you change anything.
+This will fire up a webpack dev-server at `http://localhost:8080`, which supports hot-reloading and might be more suitable if you just want to tweak the frontend.
 
 # Updating your profile
 
@@ -61,37 +59,10 @@ Deployment is done with `flightplan.js`. It is as simple as running:
 * Add them to ssh-agent: `ssh-add -K /Users/<User>/.ssh/daenen_deploy_rsa`
 * Enter password
 
+# Technologies
 
-## Notes (no need to do this)
-
-
-#### How to set correct sudo-rights for deployment user (on server)
-
-Change /etc/sudoers
-> sudo visudo
-
-Add near the end of statements
-> deploy  ALL=(root) NOPASSWD: /sbin/start daenen, /sbin/stop daenen
-
-#### Configuring the upstart job
-
-* `vim /etc/init/daenen.conf`
-
-```shell
-author          "Jan Florian Dietrich"
-description     "daenen-react"
-setuid          "www-data"
-
-start on (local-filesystems and net-device-up IFACE=venet0:0)
-stop on shutdown
-
-respawn
-console log
-env NODE_ENV=production
-
-exec
-exec /usr/local/bin/node --harmony /srv/www/daenen-react/current/dist/server.js
-```
-#### Log Messages
-
-Log Messages on success and failure can be found at `/var/log/upstart/daenen.log`
+* react + react-router
+* express4
+* Stylus + CSS-Modules
+* Webpack
+* Isomorphic/Universal rendering
