@@ -36,6 +36,7 @@
     "flightplan": "^0.6.0",
     "html-webpack-plugin": "^1.6.2",
     "json-loader": "^0.5.3",
+    "lodash": "^3.10.1",
     "nodemon": "^1.8.1",
     "react-transform-hmr": "^1.0.1",
     "style-loader": "^0.13.0",

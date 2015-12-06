@@ -1,4 +1,5 @@
 var plan = require('flightplan');
+var _ = require('lodash');
 
 plan.target('production', [
     {
@@ -31,6 +32,7 @@ plan.local(function(local) {
   local.log('Copy files to remote hosts');
   local.log('Found these files in "dist"-folder');
   var filesToCopy = local.find('dist -type f').stdout.split('\n');
+  local.log('Adding package.json');
   filesToCopy.push('package.json');
 
   // rsync files to all the target's remote hosts
@@ -49,7 +51,7 @@ plan.remote(function(remote) {
 
   remote.log('Reload application');
   remote.exec('ln -snf ' + config.serverBasePath + config.tmpDir + ' ' + config.serverBasePath + 'current');
-  remote.exec('pm2 restart daenen4-symlink');
+  remote.exec('pm2 restart daenen4-config');
 
   remote.log('Checking for stale releases');
   var releases = getReleases(remote);
@@ -58,6 +60,12 @@ plan.remote(function(remote) {
     var removeCount = releases.length - config.keepReleases;
     remote.log('Removing ' + removeCount + ' stale release(s)');
 
+    // TODO: remove current
+    releases = _.filter(releases, function(item) {
+      return item !== 'current';
+    });
+
+    // take the two most top ones
     releases = releases.slice(0, removeCount);
     releases = releases.map(function(item) {
       return config.serverBasePath  + item;
