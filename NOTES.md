@@ -31,3 +31,30 @@ exec /usr/local/bin/node --harmony /srv/www/daenen-react/current/dist/server.js
 #### Log Messages
 
 Log Messages on success and failure can be found at `/var/log/upstart/daenen.log`
+
+## PM2 Config
+
+```json
+{
+  "name"             : "daenen4-config",
+  "cwd"              : "/srv/www/daenen-react/current",
+  "script"           : "/srv/www/daenen-react/current/dist/server.js",
+  "node_args"        : [],
+  "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+  "instances"        : 1, //or 0 => 'max'
+  "min_uptime"       : "1000s", // 200 seconds, defaults to 1000
+  "max_restarts"     : 15, // defaults to 15
+  "cron_restart"     : "1 0 * * *",
+  "watch"            : false,
+  "ignore_watch"      : ["[\\/\\\\]\\./", "node_modules"],
+  "merge_logs"       : true,
+  "exec_interpreter" : "node",
+  "exec_mode"        : "fork",
+  "autorestart"      : true, // enable/disable automatic restart when an app crashes or exits
+  "vizion"           : false, // enable/disable vizion features (versioning control)
+  "env": {
+    "NODE_ENV": "production",
+    "APP_ROOT": "__dirname"
+  }
+}
+```
