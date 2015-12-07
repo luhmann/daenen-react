@@ -38,7 +38,8 @@ app.use((req, res) => {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (renderProps) {
       const componentHTML = renderToString(<RoutingContext { ...renderProps } />);
-      const HTML = template({html: componentHTML });
+      const backgroundClass = (Math.random() > 0.5) ? 'background-beam' : '';
+      const HTML = template({html: componentHTML, baseClass: backgroundClass });
       res.status(200).send(HTML);
     } else {
       res.status(404).send('Not found');
