@@ -95,7 +95,7 @@
         "Javascript Frameworks (AngularJS/Angular2, ReactJS/Flux/Redux, Elm, Yolk,Polymer, Ember.js, Mithril)",
         "Design Patterns (Mobile First, Responsive/Adaptive Design, Grid Systems, Information Architecture)",
         "Testing (PHPUnit, Jasmine, Mocha, Karma, CasperJS, Sinon, Behat, Selenium)",
-        "Build Tools (Grunt, Gulp, NPM, Jenkins, Ant)",
+        "Build Tools (NPM, Webpack, Grunt, Gulp, Browserify)",
         "CMS (Wordpress, Drupal 7 & 8, Ghost)",
         "Responsive Design",
         "Mobile Design",
