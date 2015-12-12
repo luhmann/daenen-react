@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var merge = require('webpack-merge');
 var autoprefixer = require('autoprefixer');
-var Clean = require('clean-webpack-plugin')
+var Clean = require('clean-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
 const ROOT_PATH = path.resolve(__dirname);
@@ -22,39 +22,39 @@ var common = {
     alias: {},
     modulesDirectories: [
       'app/client',
-      'node_modules'
-    ]
+      'node_modules',
+    ],
   },
   output: {
     path: BUILD_PATH,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
       {
-          test: /\.jsx$/,
-          loaders: ['babel'],
-          include: [ APP_PATH ]
+        test: /\.jsx$/,
+        loaders: ['babel'],
+        include: [APP_PATH],
       },
       {
         test: /\.js$/,
         loaders: ['babel'],
-        include: [ APP_PATH ]
+        include: [APP_PATH],
       },
       {
         test: /\.json$/,
         loaders: ['json'],
-        include: [ APP_PATH ]
+        include: [APP_PATH],
       },
       {
         test: /\.svg$/,
         loaders: ['url'],
-        include: path.resolve(ROOT_PATH, 'client', 'images')
+        include: path.resolve(ROOT_PATH, 'client', 'images'),
       },
-    ]
+    ],
   },
-  plugins: []
-}
+  plugins: [],
+};
 
 if (TARGET === 'start-react' || !TARGET) {
   module.exports = merge(common, {
@@ -65,15 +65,15 @@ if (TARGET === 'start-react' || !TARGET) {
       hot: true,
       inline: true,
       progress: true,
-      noInfo: true
+      noInfo: true,
     },
     module: {
       loaders: [
         {
           test: /\.styl$/,
-          loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus')
-        }
-      ]
+          loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus'),
+        },
+      ],
     },
     plugins: [
       new ExtractTextPlugin('app.css', { allChunks: true }),
@@ -81,10 +81,10 @@ if (TARGET === 'start-react' || !TARGET) {
       new HtmlwebpackPlugin(
         {
           title: 'Softwarehaus Dänen4',
-          template: 'client/index-dev.html'
-        })
-    ]
-  })
+          template: 'client/index-dev.html',
+        }),
+    ],
+  });
 }
 
 if (TARGET === 'watch-react') {
@@ -94,9 +94,9 @@ if (TARGET === 'watch-react') {
       loaders: [
         {
           test: /\.styl$/,
-          loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus')
-        }
-      ]
+          loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus'),
+        },
+      ],
     },
     plugins: [
       new ExtractTextPlugin('app.css', { allChunks: true }),
@@ -104,28 +104,28 @@ if (TARGET === 'watch-react') {
       new HtmlwebpackPlugin(
         {
           title: 'Softwarehaus Dänen4',
-          template: 'client/index.html'
-        })
-    ]
-  })
+          template: 'client/index.html',
+        }),
+    ],
+  });
 }
 
 if (TARGET === 'build-react') {
   module.exports = merge(common, {
     output: {
       path: BUILD_PATH,
-      filename: '[name].js?[chunkhash]'
+      filename: '[name].js?[chunkhash]',
     },
     devtool: 'source-map',
     module: {
       loaders: [
         {
           test: /\.styl$/,
-          loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus')
-        }
-      ]
+          loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus'),
+        },
+      ],
     },
-    postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
+    postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
     plugins: [
       new Clean(['dist']),
       new CopyWebpackPlugin([{ from: 'client/favicon.ico' }]),
@@ -136,14 +136,14 @@ if (TARGET === 'build-react') {
         minify: {
           removeComments: true,
           collapseWhitespace: true,
-        }
+        },
       }),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
-          warnings: false
-        }
-      })
-    ]
-  })
+          warnings: false,
+        },
+      }),
+    ],
+  });
 }
