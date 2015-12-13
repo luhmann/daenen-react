@@ -59,6 +59,18 @@ Deployment is done with `flightplan.js`. It is as simple as running:
 * Add them to ssh-agent: `ssh-add -K /Users/<User>/.ssh/daenen_deploy_rsa`
 * Enter password
 
+# Testing
+
+Run `npm test` to run mocha testsuite for react component-tests
+
+### Debugging Tests
+
+You can debug tests using `node-inspector`:
+
+1. Run `node-inspector --no-preload`
+2. In a new terminal run `npm run test-debug`
+3. Go to the url as display by node-inspector and debug away
+
 # Technologies
 
 * react + react-router
