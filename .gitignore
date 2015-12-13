@@ -35,3 +35,6 @@ npm-debug.log
 
 # build assets
 dist
+
+# ignore credentials
+deploy.js
