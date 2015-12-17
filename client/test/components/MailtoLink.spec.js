@@ -4,7 +4,7 @@ import { render } from 'enzyme';
 
 import MailtoLink from '../../javascripts/components/MailtoLink.jsx';
 
-describe('Component: MailtoLink', () => {
+describe('Component: <MailtoLink />', () => {
   it('should render an empty element with no properties passed', () => {
     const subject = render(<MailtoLink />);
 

@@ -4,7 +4,7 @@ import { render } from 'enzyme';
 
 import Link from '../../javascripts/components/Link.jsx';
 
-describe('Component: Link', () => {
+describe('Component: <Link />', () => {
   it('renders an empty link', () => {
     const wrapper = render(<Link />);
 
