@@ -5,7 +5,7 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 export default class App extends React.Component {
   render() {
-    return(
+    return (
       <Router history={createBrowserHistory()} routes={Routes}></Router>
     );
   }
