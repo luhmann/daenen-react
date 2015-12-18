@@ -14,7 +14,7 @@
     "start": "NODE_ENV=DEBUG concurrent --kill-others \"npm run watch-server\" \"npm run nodemon-server\" \"npm run watch-react\"",
     "build": "NODE_ENV=PROD npm run build-react && npm run build-server",
     "test": "BABEL_ENV=test mocha --require ./client/test/setup.js --compilers js:babel-core/register --recursive ./client/test",
-    "test-debug": "mocha --debug-brk --require babel-core/register --recursive ./client/test"
+    "test-debug": "BABEL_ENV=test mocha --debug-brk --require ./client/test/setup.js --compilers js:babel-core/register --recursive ./client/test"
   },
   "author": "Jan Florian Dietrich",
   "license": "ISC",
