@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from '../utils/expect';
 
-import Content from '../../javascripts/components/Content';
+import Content from '../../client/javascripts/components/Content';
 
 describe('Component: <Content />', () => {
   let wrapper;

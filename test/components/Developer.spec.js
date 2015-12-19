@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from '../utils/expect';
 import munge from 'munge';
 
-import Developer from '../../javascripts/components/Developer';
+import Developer from '../../client/javascripts/components/Developer';
 
 describe('Component: <Developer />', () => {
   let wrapper;

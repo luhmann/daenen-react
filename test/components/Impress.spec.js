@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'enzyme';
 import { expect } from '../utils/expect';
 
-import Impress from '../../javascripts/components/Impress.jsx';
+import Impress from '../../client/javascripts/components/Impress.jsx';
 
 describe('Component: <Impress />', () => {
   let wrapper;

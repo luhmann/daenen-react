@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow, mount, describeWithDOM } from 'enzyme';
 import { expect } from '../utils/expect';
-import ProjectList from '../../javascripts/components/ProjectList.jsx';
+
+import ProjectList from '../../client/javascripts/components/ProjectList.jsx';
 
 describe('Component: <ProjectList />', () => {
   let mockData = {
