@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'enzyme';
 import { expect } from '../utils/expect';
 
-import ElementWithLabel from '../../javascripts/components/ElementWithLabel.jsx';
+import ElementWithLabel from '../../client/javascripts/components/ElementWithLabel.jsx';
 
 describe('Component: <ElementWithLabel />', () => {
   it('renders an empty element', () => {

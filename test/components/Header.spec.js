@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'enzyme';
 import { expect } from '../utils/expect';
 
-import Header from '../../javascripts/components/Header.jsx';
+import Header from '../../client/javascripts/components/Header.jsx';
 
 describe('Component: <Header />', () => {
   it('should contain a header element', () => {

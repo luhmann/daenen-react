@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'enzyme';
 import { expect } from '../utils/expect';
 
-import Footer from '../../javascripts/components/Footer.jsx';
+import Footer from '../../client/javascripts/components/Footer.jsx';
 
 describe('Component: <Footer />', () => {
   it('should contain a footer element', () => {

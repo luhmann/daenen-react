@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from '../utils/expect';
 
-import Layout from '../../javascripts/components/Layout.jsx';
+import Layout from '../../client/javascripts/components/Layout.jsx';
 
 describe('Component: <Layout />', () => {
   it('should contain to wrapper elements', () => {

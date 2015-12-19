@@ -13,8 +13,8 @@
     "nodemon-server": "nodemon ./dist/server.js",
     "start": "NODE_ENV=DEBUG concurrent --kill-others \"npm run watch-server\" \"npm run nodemon-server\" \"npm run watch-react\"",
     "build": "NODE_ENV=PROD npm run build-react && npm run build-server",
-    "test": "BABEL_ENV=test mocha --require ./client/test/setup.js --compilers js:babel-core/register --recursive ./client/test",
-    "test-debug": "BABEL_ENV=test mocha --debug-brk --require ./client/test/setup.js --compilers js:babel-core/register --recursive ./client/test"
+    "test": "BABEL_ENV=test mocha --require ./test/setup.js --compilers js:babel-core/register --recursive",
+    "test-debug": "BABEL_ENV=test mocha --debug-brk --require ./test/setup.js --compilers js:babel-core/register --recursive"
   },
   "author": "Jan Florian Dietrich",
   "license": "ISC",
@@ -45,9 +45,11 @@
     "json-loader": "^0.5.3",
     "lodash": "^3.10.1",
     "mocha": "^2.3.4",
+    "nightwatch": "^0.8.9",
     "nodemon": "^1.8.1",
     "react-addons-test-utils": "^0.14.3",
     "react-transform-hmr": "^1.0.1",
+    "selenium-standalone": "^4.8.0",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.2",
     "template-string-loader": "0.0.3",

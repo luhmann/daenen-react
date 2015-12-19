@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from '../utils/expect';
 import { render } from 'enzyme';
 
-import Link from '../../javascripts/components/Link.jsx';
+import Link from '../../client/javascripts/components/Link.jsx';
 
 describe('Component: <Link />', () => {
   it('renders an empty link', () => {

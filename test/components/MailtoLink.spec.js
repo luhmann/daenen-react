@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from '../utils/expect';
 import { render } from 'enzyme';
 
-import MailtoLink from '../../javascripts/components/MailtoLink.jsx';
+import MailtoLink from '../../client/javascripts/components/MailtoLink.jsx';
 
 describe('Component: <MailtoLink />', () => {
   it('should render an empty element with no properties passed', () => {
