@@ -5,7 +5,7 @@
   "main": "server.js",
   "repository": "https://github.com/luhmann/daenen-react.git",
   "scripts": {
-    "start-react": "webpack-dev-server",
+    "start-react": "BABEL_ENV=development webpack-dev-server",
     "watch-react": "webpack --watch",
     "build-react": "webpack",
     "watch-server": "webpack --config webpack.config.server.js --watch",
@@ -14,7 +14,10 @@
     "start": "NODE_ENV=DEBUG concurrent --kill-others \"npm run watch-server\" \"npm run nodemon-server\" \"npm run watch-react\"",
     "build": "NODE_ENV=PROD npm run build-react && npm run build-server",
     "test": "BABEL_ENV=test mocha --require ./test/setup.js --compilers js:babel-core/register --recursive",
-    "test-debug": "BABEL_ENV=test mocha --debug-brk --require ./test/setup.js --compilers js:babel-core/register --recursive"
+    "test-debug": "BABEL_ENV=test mocha --debug-brk --require ./test/setup.js --compilers js:babel-core/register --recursive",
+    "test-e2e": "nightwatch -e chrome",
+    "before-test-e2e": "npm start",
+    "postinstall": "./node_modules/.bin/selenium-standalone install"
   },
   "author": "Jan Florian Dietrich",
   "license": "ISC",

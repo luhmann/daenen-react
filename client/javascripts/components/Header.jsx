@@ -10,7 +10,7 @@ import logo from '../../images/logo.svg';
 export default class Header extends React.Component {
   render() {
     return (
-      <IndexLink to='/' styleName='header'>
+      <IndexLink to='/' styleName='header' data-e2e="header">
         <img
           styleName='header--logo'
           src={logo}
