@@ -38,3 +38,6 @@ dist
 
 # ignore credentials
 deploy.js
+
+# ignore e2e test reports
+test/e2e/reports

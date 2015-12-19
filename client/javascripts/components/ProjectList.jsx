@@ -26,7 +26,7 @@ class Project extends React.Component {
     }
 
     return (
-      <div>
+      <div data-e2e='project'>
         <span styleName='project--client'>{client}</span>
         <span styleName='project--description'>({this.props.data.description})</span>
         {screenshots}

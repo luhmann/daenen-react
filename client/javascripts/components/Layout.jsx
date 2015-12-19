@@ -11,7 +11,7 @@ import Footer from './Footer.jsx';
 export default class Layout extends React.Component {
   render() {
     return (
-      <div styleName='layout'>
+      <div data-e2e='layout' styleName='layout'>
         <div styleName='wrapper'>
           <Header />
           { this.props.children }
