@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
     return (
       <div styleName='footer' data-e2e='footer'>
           Softwarehaus Dänen4, Sonntagstraße 4, 10245&nbsp;Berlin &nbsp;&nbsp;|&nbsp; &nbsp;
-          <Link to='impress'>Impressum</Link>
+          <Link data-e2e='impress-link' to='impress'>Impressum</Link>
       </div>
     );
   }

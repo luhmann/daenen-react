@@ -39,7 +39,7 @@ class Project extends React.Component {
 class MoreButton extends React.Component {
   render() {
     return (
-      <Link styleName='more' url='#' onClick={this.props.callback}>{this.props.text}</Link>
+      <Link styleName='more' url='#' onClick={this.props.callback} data-e2e='more'>{this.props.text}</Link>
     );
   }
 };
