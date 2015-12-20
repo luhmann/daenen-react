@@ -9,83 +9,89 @@ import TransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
 @CSSModules(styles, CSSModuleConfig)
 class Project extends React.Component {
-    render() {
-        var client;
-        var screenshots;
+  render() {
+    var client;
+    var screenshots;
 
-        if (this.props.data.link) {
-            client = function(scope) {
-                return (
-                    <Link url={ scope.props.data.link } title={ scope.props.data.client } target="_blank" >
-                        { scope.props.data.client }
-                    </Link>
-                );
-            }(this);
-        } else {
-            client = this.props.data.client;
-        }
-
+    if (this.props.data.link) {
+      client = function(scope) {
         return (
-            <div>
-                <span styleName="project--client">{ client }</span>
-                <span styleName="project--description">({ this.props.data.description })</span>
-            { screenshots }
-            </div>
+          <Link url={scope.props.data.link} title={scope.props.data.client} target='_blank'>
+            {scope.props.data.client}
+          </Link>
         );
+      }(this);
+    } else {
+      client = this.props.data.client;
     }
+
+    return (
+      <div data-e2e='project'>
+        <span styleName='project--client'>{client}</span>
+        <span styleName='project--description'>({this.props.data.description})</span>
+        {screenshots}
+      </div>
+    );
+  }
 };
 
 @CSSModules(styles, CSSModuleConfig)
 class MoreButton extends React.Component {
-    render() {
-        return (
-            <Link styleName="more" url="#" onClick={ this.props.callback }>{ this.props.text }</Link>
-        );
-    }
+  render() {
+    return (
+      <Link styleName='more' url='#' onClick={this.props.callback} data-e2e='more'>{this.props.text}</Link>
+    );
+  }
 };
 
 @CSSModules(styles, CSSModuleConfig)
 export default class ProjectList extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        hideAdditionalItems: true,
-        moreButtonText: 'More Projects'
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      hideAdditionalItems: true,
+      moreButtonText: 'More Projects',
+    };
+  }
+
+  renderProjects = () => {
+    var projects = this.props.projects;
+
+    if (this.state.hideAdditionalItems === true) {
+      projects = projects.slice(0, 4);
     }
 
-    renderProjects = () => {
-        var projects = this.props.projects;
+    return projects.map((project, index) => {
+      return (
+        <li key={this.props.dev + index}>
+          <Project data={project} key={this.props.dev + index} index={index}/>
+        </li>
+      );
+    }, this);
+  }
 
-        if (this.state.hideAdditionalItems === true) {
-            projects = projects.slice(0, 4);
-        }
+  handleMoreButtonClick = (event) => {
+    event.preventDefault();
+    this.setState({
+      hideAdditionalItems: !this.state.hideAdditionalItems,
+    });
+  }
 
-        return projects.map((project, index) => {
-            return(
-                <li><Project data={ project } key={ this.props.dev + index } index={ index } /></li>
-            );
-        }, this);
-    }
+  getMoreButtonText() {
+    return (this.state.hideAdditionalItems)
+      ? 'More Projects'
+      : 'Less Projects';
+  }
 
-    handleMoreButtonClick = (event) => {
-        event.preventDefault();
-        this.setState( { hideAdditionalItems: !this.state.hideAdditionalItems } );
-    }
-
-    getMoreButtonText() {
-        return (this.state.hideAdditionalItems) ? 'More Projects' : 'Less Projects'
-    }
-
-    render() {
-        return (
-            <div>
-                <ElementWithLabel label="Clients and Projects"></ElementWithLabel>
-                <ul>
-                    { this.renderProjects() }
-                </ul>
-                <MoreButton callback={ this.handleMoreButtonClick } text={ this.getMoreButtonText() }/>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <ElementWithLabel label='Clients and Projects'></ElementWithLabel>
+        <ul>
+          {this.renderProjects()}
+        </ul>
+        <MoreButton callback={this.handleMoreButtonClick} text={this.getMoreButtonText()}/>
+      </div>
+    );
+  }
 };

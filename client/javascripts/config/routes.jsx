@@ -11,10 +11,10 @@ import Impress from '../components/Impress';
  * of react-router
  */
 export default(
-  <Route name app path="/" component={Layout}>
+  <Route name app path='/' component={Layout}>
     <IndexRoute component={Content}/>
-    <Route path="impress" component={Impress}/>
-    <Route path="impressum" conponent={Impress}/>
-    <Route path="*" component={Impress}/>
+    <Route path='impress' component={Impress}/>
+    <Route path='impressum' conponent={Impress}/>
+    <Route path='*' component={Impress}/>
   </Route>
 );
