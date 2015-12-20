@@ -1,24 +1,28 @@
 var plan = require('flightplan');
 var _ = require('lodash');
+var deploySettings = require('./config/deploy.js');
 
 plan.target('production', [
     {
-      host: 'www.daenen4.de',
-      username: 'deploy',
-      privateKey: '/Users/jfd/.ssh/daenen_deploy_rsa',
-      passphrase: '2a97CTdUckfELTQX?bPDCW(mFX}robtcxbM9jnDMsbzkdtTWvg',
+      host: deploySettings.host,
+      username: deploySettings.username,
+      privateKey: deploySettings.privateKey,
+      passphrase: deploySettings.passphrase,
       agent: process.env.SSH_AUTH_SOCK,
     },
 ]);
 
 var config = {
   tmpDir: ('deploy-' + new Date().getTime()),
-  serverBasePath:  '/srv/www/daenen-react/',
+  serverBasePath:  deploySettings.baseFolder,
   keepReleases: 5,
 };
 
 // run commands on localhost
 plan.local(function(local) {
+  local.log('Execute tests');
+  local.exec('npm test');
+
   local.log('Run build');
   local.exec('npm run build');
 

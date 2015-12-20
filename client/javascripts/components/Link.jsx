@@ -1,17 +1,17 @@
 import React from 'react';
-// TODO: is this used
+
 export default class Link extends React.Component {
-    render() {
-        var classes = ['link'];
+  render() {
+    var classes = ['link'];
 
-        if (this.props.className) {
-            classes.push(this.props.className);
-        }
-
-        return (
-            <a {...this.props} className={ classes.join(' ') } href={ this.props.url } title={ this.props.title }>
-                { this.props.children }
-            </a>
-        );
+    if (this.props.className) {
+      classes.push(this.props.className);
     }
+
+    return (
+      <a {...this.props} className={classes.join(' ')} href={this.props.url} title={this.props.title}>
+        {this.props.children}
+      </a>
+    );
+  }
 }

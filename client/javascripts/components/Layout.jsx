@@ -10,9 +10,9 @@ import Footer from './Footer.jsx';
 @CSSModules(styles, CSSModuleConfig)
 export default class Layout extends React.Component {
   render() {
-    return(
-      <div styleName="layout">
-        <div styleName="wrapper">
+    return (
+      <div data-e2e='layout' styleName='layout'>
+        <div styleName='wrapper'>
           <Header />
           { this.props.children }
           <Footer />

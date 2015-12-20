@@ -9,12 +9,12 @@ import hp from '../json/hp.json';
 
 @CSSModules(styles, CSSModuleConfig)
 export default class Layout extends React.Component {
-    render() {
-        return (
-            <div styleName="content">
-              <Developer data={ jfd } />
-              <Developer data={ hp } />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div styleName='content' data-e2e='content'>
+        <Developer data={jfd}/>
+        <Developer data={hp}/>
+      </div>
+    );
+  }
 };
