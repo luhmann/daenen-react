@@ -1,4 +1,5 @@
 # Website for Softwarehaus Dänen4
+[![Build Status](https://travis-ci.org/luhmann/daenen-react.svg?branch=master)](https://travis-ci.org/luhmann/daenen-react)
 
 This is the small website for www.daenen4.de. It is a fully isomorphic/universal React-JS-App that runs on a NodeJS/Express-Stack
 ...in other words it's complete overkill for its purpose. It is supposed to be a fun learning experience.
