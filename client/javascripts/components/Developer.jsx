@@ -49,7 +49,7 @@ export default class Developer extends React.Component {
     }(this.props.data.additional);
 
     return (
-      <div styleName='developer' key={this.props.data.id}>
+      <div styleName='developer' key={this.props.data.id} data-e2e='dev'>
         <DeveloperSection key='name'>
           <h3 styleName='developer--name'>{this.props.data.name}</h3>
           <div styleName='developer--job-title'>{this.props.data.jobTitle}</div>

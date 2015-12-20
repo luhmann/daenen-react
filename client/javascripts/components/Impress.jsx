@@ -11,7 +11,7 @@ import jfd from '../json/jfd.json';
 export default class Impress extends React.Component {
   render() {
     return (
-      <div styleName='impress'>
+      <div styleName='impress' data-e2e='impress'>
         <div styleName='impress--title'>Impressum</div>
 
         <div styleName='impress--section'>
@@ -36,7 +36,7 @@ export default class Impress extends React.Component {
           </ElementWithLabel>
         </div>
 
-        <div styleName='impress--section'>
+        <div styleName='impress--section' data-e2e='ust'>
           <ElementWithLabel label='Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz'>
             <br/>DE&nbsp;252170892
           </ElementWithLabel>

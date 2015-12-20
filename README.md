@@ -58,6 +58,7 @@ Deployment is done with `flightplan.js`. It is as simple as running:
 * Put them in `~/.ssh`
 * Add them to ssh-agent: `ssh-add -K /Users/<User>/.ssh/daenen_deploy_rsa`
 * Enter password
+* Configure the deployment settings in the config-folder
 
 # Testing
 
@@ -71,6 +72,13 @@ You can debug tests using `node-inspector`:
 2. In a new terminal run `npm run test-debug`
 3. Go to the url as display by node-inspector and debug away
 
+### End-to-End Tests
+
+There is a very small e2e-suite that ensures basic info is present on the page and site navigation works.
+
+1. Make sure the setup is running `npm start`
+2. `npm run test-e2e`
+
 # Technologies
 
 * react + react-router
@@ -78,3 +86,5 @@ You can debug tests using `node-inspector`:
 * Stylus + CSS-Modules
 * Webpack
 * Isomorphic/Universal rendering
+* mocha
+* NightwatchJS

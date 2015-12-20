@@ -11,7 +11,7 @@ import hp from '../json/hp.json';
 export default class Layout extends React.Component {
   render() {
     return (
-      <div styleName='content'>
+      <div styleName='content' data-e2e='content'>
         <Developer data={jfd}/>
         <Developer data={hp}/>
       </div>
