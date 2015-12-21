@@ -20,9 +20,6 @@ var config = {
 
 // run commands on localhost
 plan.local(function(local) {
-  local.log('Execute tests');
-  local.exec('npm test');
-
   local.log('Run build');
   local.exec('npm run build');
 

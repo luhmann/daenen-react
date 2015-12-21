@@ -1,3 +1,5 @@
+// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
+
 var path = require('path');
 var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');

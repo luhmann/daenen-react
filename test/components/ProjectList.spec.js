@@ -1,3 +1,4 @@
+// jscs:disable disallowMultipleVarDecl
 import React from 'react';
 import { shallow, mount, describeWithDOM } from 'enzyme';
 import { expect } from '../utils/expect';
@@ -5,7 +6,7 @@ import { expect } from '../utils/expect';
 import ProjectList from '../../client/javascripts/components/ProjectList.jsx';
 
 describe('Component: <ProjectList />', () => {
-  let mockData = {
+  var mockData = {
     projects: [
       {
         client: 'ePost Development GmbH',

@@ -12,11 +12,12 @@
     "build-server": "webpack --config webpack.config.server.js",
     "nodemon-server": "nodemon ./dist/server.js",
     "start": "NODE_ENV=DEBUG concurrent --kill-others \"npm run watch-server\" \"npm run nodemon-server\" \"npm run watch-react\"",
-    "build": "NODE_ENV=PROD npm run build-react && npm run build-server",
+    "build": "NODE_ENV=PROD npm run lint && npm run test && npm run build-react && npm run build-server",
     "test": "BABEL_ENV=test mocha --require ./test/setup.js --compilers js:babel-core/register --recursive",
     "test-debug": "BABEL_ENV=test mocha --debug-brk --require ./test/setup.js --compilers js:babel-core/register --recursive",
     "test-e2e": "nightwatch -e chrome",
-    "postinstall": "./node_modules/.bin/selenium-standalone install"
+    "postinstall": "selenium-standalone install",
+    "lint": "jscs ."
   },
   "author": "Jan Florian Dietrich",
   "license": "ISC",
@@ -44,6 +45,7 @@
     "file-loader": "^0.8.4",
     "flightplan": "^0.6.0",
     "html-webpack-plugin": "^1.6.2",
+    "jscs": "^2.7.0",
     "jsdom": "^7.2.1",
     "json-loader": "^0.5.3",
     "lodash": "^3.10.1",

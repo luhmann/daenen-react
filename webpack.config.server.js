@@ -20,10 +20,6 @@ const BUILD_PATH = path.resolve(ROOT_PATH, 'dist');
 module.exports = {
   entry: APP_PATH,
   target: 'node',
-  // context: __dirname,
-  // node: {
-  //   __dirname: true,
-  // },
   resolve: {
     extensions: ['', '.js', '.jsx', '.styl'],
     moduleDirectories: [
