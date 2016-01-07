@@ -71,7 +71,7 @@
     "inert": "^3.2.0",
     "munge": "^0.1.4",
     "react": "^0.14.2",
-    "react-dom": "^0.14.2",
+    "react-dom": "^0.14.6",
     "react-router": "^1.0.0",
     "react-css-modules": "^3.6.1"
   },
