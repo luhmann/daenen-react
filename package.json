@@ -73,7 +73,7 @@
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-router": "^1.0.0",
-    "react-css-modules": "^3.6.1"
+    "react-css-modules": "^3.6.8"
   },
   "engines": {
     "node": ">=5.0.0"
