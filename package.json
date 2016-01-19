@@ -24,7 +24,7 @@
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel-cli": "^6.2.0",
-    "babel-core": "^6.2.1",
+    "babel-core": "^6.4.5",
     "babel-eslint": "^5.0.0-beta4",
     "babel-loader": "^6.2.0",
     "babel-plugin-transform-decorators-legacy": "^1.1.0",
