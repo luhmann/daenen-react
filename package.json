@@ -33,7 +33,7 @@
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
     "babel-preset-stage-0": "^6.1.18",
-    "chai": "^3.4.1",
+    "chai": "^3.5.0",
     "clean-webpack-plugin": "^0.1.4",
     "concurrently": "^1.0.0",
     "copy-webpack-plugin": "^0.3.3",
