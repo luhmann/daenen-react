@@ -67,7 +67,7 @@
     "serve-favicon": "^2.3.0",
     "express": "^4.13.3",
     "express-robots": "^0.1.5",
-    "history": "^1.13.0",
+    "history": "^2.0.0",
     "inert": "^3.2.0",
     "munge": "^0.1.4",
     "react": "^0.14.2",
