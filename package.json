@@ -26,7 +26,7 @@
     "babel-cli": "^6.2.0",
     "babel-core": "^6.2.1",
     "babel-eslint": "^5.0.0-beta4",
-    "babel-loader": "^6.2.0",
+    "babel-loader": "^6.2.2",
     "babel-plugin-transform-decorators-legacy": "^1.1.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.1.18",
