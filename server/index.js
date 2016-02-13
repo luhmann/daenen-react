@@ -6,7 +6,7 @@ import robots from 'express-robots';
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { match, RoutingContext } from 'react-router';
+import { match, RouterContext } from 'react-router';
 import routes from '../client/javascripts/config/routes.jsx';
 
 import template from '../dist/public/index.html';
@@ -16,7 +16,7 @@ const staticDir = path.resolve('dist', 'public');
 const favIconPath = path.resolve(staticDir, 'favicon.ico');
 const host = process.env.APP_HOST || 'localhost';
 const port = process.env.APP_PORT || 3000;
-const staticConf = express.static(staticDir, { maxAge: '60 days'});
+const staticConf = express.static(staticDir, { maxAge: '60 days' });
 
 // configure gzip compression
 app.use(compression());
@@ -37,9 +37,11 @@ app.use((req, res) => {
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (renderProps) {
-      const componentHTML = renderToString(<RoutingContext { ...renderProps } />);
+      const componentHTML = renderToString(<RouterContext { ...renderProps } />);
       const backgroundClass = (Math.random() > 0.5) ? 'background-beam' : '';
-      const HTML = template({html: componentHTML, baseClass: backgroundClass });
+
+      // render using webpack template string loader
+      const HTML = template({ html: componentHTML, baseClass: backgroundClass });
       res.status(200).send(HTML);
     } else {
       res.status(404).send('Not found');

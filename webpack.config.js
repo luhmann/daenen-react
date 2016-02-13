@@ -80,11 +80,17 @@ if (TARGET === 'start-react' || !TARGET) {
     plugins: [
       new ExtractTextPlugin('app.css', { allChunks: true }),
       new webpack.HotModuleReplacementPlugin(),
-      new HtmlwebpackPlugin(
-        {
-          title: 'Softwarehaus Dänen4',
-          template: 'client/index-dev.html',
-        }),
+      new HtmlwebpackPlugin({
+        appMountId: 'app',
+        inject: false,
+        mobile: true,
+        template: 'client/index.ejs',
+        title: 'Softwarehaus Dänen4',
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+        },
+      }),
     ],
   });
 }
@@ -103,11 +109,17 @@ if (TARGET === 'watch-react') {
     plugins: [
       new ExtractTextPlugin('app.css', { allChunks: true }),
       new webpack.HotModuleReplacementPlugin(),
-      new HtmlwebpackPlugin(
-        {
-          title: 'Softwarehaus Dänen4',
-          template: 'client/index.html',
-        }),
+      new HtmlwebpackPlugin({
+        appMountId: 'app',
+        inject: false,
+        mobile: true,
+        template: 'client/index.ejs',
+        title: 'Softwarehaus Dänen4',
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+        },
+      })
     ],
   });
 }
@@ -131,10 +143,14 @@ if (TARGET === 'build-react') {
     plugins: [
       new Clean(['dist']),
       new CopyWebpackPlugin([{ from: 'client/favicon.ico' }]),
-      new ExtractTextPlugin('styles.css?[chunkhash]'),
+      new ExtractTextPlugin('app.css?[chunkhash]'),
       new HtmlwebpackPlugin({
+        appMountId: 'app',
+        favIcon: '/static/facivon.ico',
+        inject: false,
+        mobile: true,
+        template: 'client/index.ejs',
         title: 'Softwarehaus Dänen4',
-        template: 'client/index.html',
         minify: {
           removeComments: true,
           collapseWhitespace: true,

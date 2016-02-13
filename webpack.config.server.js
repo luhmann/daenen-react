@@ -6,10 +6,10 @@ var fs = require('fs');
 // externalize node-modules to avoid problems with express and css-modules
 var nodeModules = {};
 fs.readdirSync('node_modules')
-.filter(function(x) {
+.filter(function (x) {
   return ['.bin'].indexOf(x) === -1;
 })
-.forEach(function(mod) {
+.forEach(function (mod) {
   nodeModules[mod] = 'commonjs ' + mod;
 });
 

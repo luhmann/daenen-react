@@ -6,7 +6,7 @@ import '../stylesheets/base/reset.styl';
 main();
 
 function main() {
-  const app = document.querySelector('.base');
+  const app = document.querySelector('#app');
   app.innerHTML = '';
 
   ReactDOM.render(<App/>, app);
