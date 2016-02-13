@@ -16,7 +16,7 @@
     "test": "BABEL_ENV=test mocha --require ./test/setup.js --compilers js:babel-core/register --recursive",
     "test-debug": "BABEL_ENV=test mocha --debug-brk --require ./test/setup.js --compilers js:babel-core/register --recursive",
     "test-e2e": "nightwatch -e chrome",
-    "postinstall": "selenium-standalone install",
+    "postinstall": "if [ -z \"$npm_config_production\" ]; then selenium-standalone install; fi",
     "lint": "jscs ."
   },
   "author": "Jan Florian Dietrich",
