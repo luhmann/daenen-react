@@ -65,7 +65,7 @@
   "dependencies": {
     "compression": "^1.6.0",
     "serve-favicon": "^2.3.0",
-    "express": "^4.13.3",
+    "express": "^4.13.4",
     "express-robots": "^0.1.5",
     "history": "^2.0.0",
     "inert": "^3.2.0",
