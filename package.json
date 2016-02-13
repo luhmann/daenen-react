@@ -52,7 +52,7 @@
     "nightwatch": "^0.8.9",
     "nodemon": "^1.8.1",
     "react-addons-test-utils": "^0.14.3",
-    "react-transform-hmr": "^1.0.1",
+    "react-transform-hmr": "^1.0.2",
     "selenium-standalone": "^4.8.0",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.2",
