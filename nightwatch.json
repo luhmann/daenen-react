@@ -8,7 +8,7 @@
   "globals_path": "",
   "selenium": {
     "start_process": true,
-    "server_path": "./node_modules/selenium-standalone/.selenium/selenium-server/2.50.1-server.jar",
+    "server_path": "./node_modules/selenium-standalone/.selenium/selenium-server/2.53.0-server.jar",
     "log_path": false,
     "host": "0.0.0.0",
     "port": 4444,
