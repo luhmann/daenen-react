@@ -55,7 +55,7 @@
     "react-transform-hmr": "^1.0.1",
     "selenium-standalone": "^5.0.0",
     "style-loader": "^0.13.0",
-    "stylus-loader": "^1.4.2",
+    "stylus-loader": "^2.0.0",
     "template-string-loader": "0.0.3",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.2",
