@@ -43,5 +43,5 @@ module.exports = {
       .waitForElementVisible('[data-e2e="impress"]', 1000)
 
     browser.expect.element('[data-e2e="ust"]').to.be.present
-  },
+  }
 }

@@ -1,8 +1,8 @@
-import React from 'react';
-import CSSModules from 'react-css-modules';
-import CSSModuleConfig from '../config/cssModules.js';
-import { Link } from 'react-router';
-import styles from '../../stylesheets/modules/footer.styl';
+import React from 'react'
+import CSSModules from 'react-css-modules'
+import CSSModuleConfig from '../config/cssModules.js'
+import { Link } from 'react-router'
+import styles from '../../stylesheets/modules/footer.styl'
 
 @CSSModules(styles, CSSModuleConfig)
 export default class Footer extends React.Component {

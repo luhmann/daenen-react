@@ -1,11 +1,11 @@
-import React from 'react';
-import CSSModules from 'react-css-modules';
-import CSSModuleConfig from '../config/cssModules.js';
-import styles from '../../stylesheets/modules/impress.styl';
+import React from 'react'
+import CSSModules from 'react-css-modules'
+import CSSModuleConfig from '../config/cssModules.js'
+import styles from '../../stylesheets/modules/impress.styl'
 
-import MailtoLink from './MailtoLink';
-import ElementWithLabel from './ElementWithLabel';
-import jfd from '../json/jfd.json';
+import MailtoLink from './MailtoLink'
+import ElementWithLabel from './ElementWithLabel'
+import jfd from '../json/jfd.json'
 
 @CSSModules(styles, CSSModuleConfig)
 export default class Impress extends React.Component {

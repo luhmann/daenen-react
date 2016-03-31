@@ -1,20 +1,19 @@
-import React from 'react';
-import CSSModules from 'react-css-modules';
-const munge = require('munge');
+import React from 'react'
+const munge = require('munge')
 
 export default class Header extends React.Component {
-  render() {
-    var url = munge(this.props.email);
-    var href = 'mailto:' + url;
-    var classes = 'link';
+  render () {
+    var url = munge(this.props.email)
+    var href = 'mailto:' + url
+    var classes = 'link'
 
     if (this.props.className) {
-      classes += ' ' + this.props.className;
+      classes += ' ' + this.props.className
     }
 
-    var rawMarkup = `<a href="${href}" class="${classes}">${url}</a>`;
+    var rawMarkup = `<a href="${href}" class="${classes}">${url}</a>`
     return (
       <span dangerouslySetInnerHTML={{__html: rawMarkup}}/>
-    );
+    )
   }
-};
+}

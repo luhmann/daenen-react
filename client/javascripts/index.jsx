@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import '../stylesheets/base/reset.styl';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './components/App'
+import '../stylesheets/base/reset.styl'
 
-main();
+main()
 
-function main() {
-  const app = document.querySelector('#app');
-  app.innerHTML = '';
+function main () {
+  const app = document.querySelector('#app')
+  app.innerHTML = ''
 
-  ReactDOM.render(<App/>, app);
+  ReactDOM.render(<App/>, app)
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import CSSModules from 'react-css-modules';
-import CSSModuleConfig from '../config/cssModules.js';
-import { IndexLink } from 'react-router';
-import styles from '../../stylesheets/modules/header.styl';
+import React from 'react'
+import CSSModules from 'react-css-modules'
+import CSSModuleConfig from '../config/cssModules.js'
+import { IndexLink } from 'react-router'
+import styles from '../../stylesheets/modules/header.styl'
 
-import logo from '../../images/logo.svg';
+import logo from '../../images/logo.svg'
 
 @CSSModules(styles, CSSModuleConfig)
 export default class Header extends React.Component {
@@ -20,6 +20,6 @@ export default class Header extends React.Component {
           alt='Softwarehaus Dänen4 | Sonntagstr. 4 | 10245 Berlin'
         />
       </IndexLink>
-    );
+    )
   }
 }

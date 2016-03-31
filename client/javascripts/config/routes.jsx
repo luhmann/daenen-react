@@ -1,9 +1,9 @@
-import React from 'react';
-import {IndexRoute, Route} from 'react-router';
+import React from 'react'
+import {IndexRoute, Route} from 'react-router'
 
-import Layout from '../components/Layout';
-import Content from '../components/Content';
-import Impress from '../components/Impress';
+import Layout from '../components/Layout'
+import Content from '../components/Content'
+import Impress from '../components/Impress'
 
 /*
  * These are separated from the <Router> definition in App.jsx because the serverside-rendering needs
@@ -17,4 +17,4 @@ export default(
     <Route path='impressum' conponent={Impress}/>
     <Route path='*' component={Impress}/>
   </Route>
-);
+)
