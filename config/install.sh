@@ -3,7 +3,7 @@
 sudo apt-get update
 
 # Install necessary letsencrypt dependencies
-sudo apt-get -y install git bc htop
+sudo apt-get -y install git bc htop fail2ban
 
 # Clone the letsencrypt repo
 sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
