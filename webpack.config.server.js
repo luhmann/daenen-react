@@ -1,5 +1,6 @@
 var path = require('path')
 var fs = require('fs')
+var webpack = require('webpack')
 
 // externalize node-modules to avoid problems with express and css-modules
 var nodeModules = {}
@@ -60,5 +61,11 @@ module.exports = {
       }
     ]
   },
-  plugins: []
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
+  ]
 }
