@@ -70,7 +70,7 @@
     "express-robots": "^0.1.5",
     "helmet": "^2.1.0",
     "history": "^2.0.1",
-    "inert": "^3.2.0",
+    "inert": "^4.0.0",
     "munge": "^0.1.4",
     "react": "^15.0.0",
     "react-css-modules": "^3.7.6",
