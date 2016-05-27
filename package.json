@@ -67,7 +67,7 @@
   "dependencies": {
     "compression": "^1.6.1",
     "express": "^4.13.4",
-    "express-robots": "^0.1.5",
+    "express-robots": "^0.2.0",
     "helmet": "^2.1.0",
     "history": "^2.0.1",
     "inert": "^4.0.0",
