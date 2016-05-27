@@ -46,7 +46,7 @@
     "flightplan": "^0.6.13",
     "html-webpack-plugin": "^2.15.0",
     "jscs": "^3.0.1",
-    "jsdom": "^8.2.0",
+    "jsdom": "^9.0.0",
     "json-loader": "^0.5.4",
     "lodash": "^4.6.1",
     "mocha": "^2.4.5",
