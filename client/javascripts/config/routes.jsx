@@ -15,6 +15,5 @@ export default(
     <IndexRoute component={Content}/>
     <Route path='impress' component={Impress}/>
     <Route path='impressum' conponent={Impress}/>
-    <Route path='*' component={Impress}/>
   </Route>
 )
