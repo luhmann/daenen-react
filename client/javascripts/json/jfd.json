@@ -26,7 +26,7 @@
     ],
     "qualification": [
         "Web Design & Frontend Development",
-        "Fullstack JavaScript Development",
+        "Fullstack JavaScript & PHP Development",
         "Isomorphic/Universal Responsive Web Apps, Progressive Web Apps",
         "User-Interface & User-Experience Design",
         "Information Architecture",
@@ -91,7 +91,7 @@
         "Vue, Inferno, Polymer, Elm",
         "Build Tools (NPM, Webpack, Babel, Grunt, Gulp, Browserify)",
         "Testing (PHPUnit, Jasmine, Mocha, Karma, Protractor, NightwatchJS, CasperJS, Sinon, Behat, Selenium)",
-        "PHP5/Hack/HHVM",
+        "PHP5, Hack/HHVM",
         "PHP Frameworks (Symfony 2, Laravel, Zend Framework 2, yii)",
         "HTML5, WAI-ARIA, WebComponents",
         "CSS & Preprocessors (CSS3/4, CSS Modules, BEM, SMACSS, PostCSS, SASS, Stylus, Less)",
