@@ -1,7 +1,7 @@
 @require '../base/variables.styl'
 
 :global .base
-  height: 100%
+  min-height: 100%
 
 :global .background-beam > div
   background-color: beam-background-color
@@ -12,14 +12,13 @@
     background-color: base-background-color
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMTAwJScgaGVpZ2h0PSczMDAnPgoJPGRlZnM+CgkJPGcgaWQ9J2MnPgoJCQk8ZWxsaXBzZSBjeD0nNTAlJyByeD0nNTAlJyByeT0nMjAwJScgZmlsbC1vcGFjaXR5PScwLjInIGZpbGw9JyNmZmZmZmYnLz4KCQk8L2c+Cgk8L2RlZnM+Cgk8cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWxsPScjMEEyMTQwJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PSctMjAwJScvPgoJPHVzZSB4bGluazpocmVmPScjYycgeT0nLTE3NSUnLz4KCTx1c2UgeGxpbms6aHJlZj0nI2MnIHk9Jy0xNTAlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PSctMTI1JScvPgoJPHVzZSB4bGluazpocmVmPScjYycgeT0nLTEwMCUnLz4KCTx1c2UgeGxpbms6aHJlZj0nI2MnIHk9Jy03NSUnLz4KCTx1c2UgeGxpbms6aHJlZj0nI2MnIHk9Jy01MCUnLz4KCTx1c2UgeGxpbms6aHJlZj0nI2MnIHk9Jy0yNSUnLz4KCTx1c2UgeGxpbms6aHJlZj0nI2MnIHk9JzAlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PScyNSUnLz4KCTx1c2UgeGxpbms6aHJlZj0nI2MnIHk9JzUwJScvPgoJPHVzZSB4bGluazpocmVmPScjYycgeT0nNzUlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PScxMDAlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PScxMjUlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PScxNTAlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PScxNzUlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PScyMDAlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PScyMjUlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PScyNTAlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PScyNzUlJy8+Cgk8dXNlIHhsaW5rOmhyZWY9JyNjJyB5PSczMDAlJy8+Cjwvc3ZnPg==')
     color: base-font-color
+    display: flex
+    justify-content: center
     font-family: base-font-family
     font-feature-settings "kern", "liga", "pnum"
     font-size: base-font-size
     line-height base-line-height
-    margin: 0
     min-height: 100%
-    padding: 0
-    padding-top: 1.46154em;
     width: 100%
 
   // .background-beam &
@@ -28,9 +27,6 @@
   //     background-size: 100% 1000%
 
 .wrapper
-    margin-left: auto
-    margin-right: auto
-    position: relative
     width: 73.84615em
 
     @media screen and (max-width: mobile-max-width)
