@@ -25,18 +25,17 @@
         }
     ],
     "qualification": [
-        "Web Design & Development",
-        "Software Engineering",
-        "Mobile Development",
+        "Web Design & Frontend Development",
+        "Fullstack JavaScript Development",
+        "Isomorphic/Universal Responsive Web Apps, Progressive Web Apps",
         "User-Interface & User-Experience Design",
         "Information Architecture",
-        "Automated Testing",
-        "Photography & Retouching"
+        "Automated Testing"
     ],
     "projects": [
         {
             "client": "ePost Development GmbH",
-            "description": "Full-Stack-Development for mail-portal using AngularJS, Webpack, Scala & Play",
+            "description": "Full-Stack-Development for Mail-Portal using AngularJS/Angular2, Webpack, Scala & Play",
             "link": "http://www.epost.de"
         },
         {
@@ -86,24 +85,23 @@
         }
     ],
     "technologies": [
-        "PHP5",
-        "Hack/HHVM",
-        "PHP Frameworks (Symfony 2, Laravel, Zend Framework 2, yii)",
-        "HTML5/XHTML/WebComponents",
-        "CSS/Preprocessors/Libs (CSS3, CSS Modules, SASS, Compass, Bourbon, Bitters, Less, Stylus)",
-        "JavaScript/ES5/ES6/NodeJS",
-        "Javascript Frameworks (AngularJS/Angular2, ReactJS/Flux/Redux, Elm, Yolk, Polymer, Ember.js, Mithril)",
-        "Design Patterns (Mobile First, Responsive/Adaptive Design, Grid Systems, Information Architecture)",
-        "Testing (PHPUnit, Jasmine, Mocha, Karma, CasperJS, Sinon, Behat, Selenium)",
+        "JavaScript, ES6/ES2015, Typescript, NodeJS",
+        "React, React Native, Redux/Flux, ImmutableJS",
+        "Angular, Angular2",
+        "Vue, Inferno, Polymer, Elm",
         "Build Tools (NPM, Webpack, Babel, Grunt, Gulp, Browserify)",
-        "CMS (Wordpress, Drupal 7 & 8, Ghost)",
-        "Responsive Design",
-        "Mobile Design",
+        "Testing (PHPUnit, Jasmine, Mocha, Karma, Protractor, NightwatchJS, CasperJS, Sinon, Behat, Selenium)",
+        "PHP5/Hack/HHVM",
+        "PHP Frameworks (Symfony 2, Laravel, Zend Framework 2, yii)",
+        "HTML5, WAI-ARIA, WebComponents",
+        "CSS & Preprocessors (CSS3/4, CSS Modules, BEM, SMACSS, PostCSS, SASS, Stylus, Less)",
+        "Design Patterns (Mobile First, Responsive/Adaptive Design, Grid Systems, Information Architecture)",
+        "CMS (Wordpress, Drupal 7/8, Ghost)",
         "DBMS & Migrations (MySql/MariaDB, PostgreSQL, Doctrine, Eloquent)",
-        "NoSQL (Redis, Riak, CouchDB)",
-        "Solr/Lucene/Elasticsearch",
-        "Python 2/3",
-        "Python Frameworks (Flask, Django, Scrapy)",
+        "NoSQL (Redis, Riak, MongoDB, CouchDB)",
+        "Solr, Lucene, Elasticsearch",
+        "Scala/Play",
+        "Python 2/3, Flask, Django, Scrapy",
         "Server (Varnish, Nginx, Tornado, Express, Koa)"
     ],
     "additional": "Please ask for my profile for detailed information"
