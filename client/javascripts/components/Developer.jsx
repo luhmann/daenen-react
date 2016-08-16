@@ -84,7 +84,15 @@ export default class Developer extends React.Component {
 
         <DeveloperSection key='technologies'>
           <ElementWithLabel label='Technologies'>
-            {this.props.data.technologies.join(', ')}.
+            <ul>
+              {this.props.data.technologies.map((item) => {
+                return (
+                  <li>
+                    {item}
+                  </li>
+                )
+              })}
+            </ul>
           </ElementWithLabel>
         </DeveloperSection>
 
