@@ -88,7 +88,7 @@
         "JavaScript, ES6/ES2015, Typescript, NodeJS",
         "React, React Native, Redux/Flux, ImmutableJS",
         "Angular, Angular2",
-        "Vue, Inferno, Polymer, Elm",
+        "Vue.js 1/2, Inferno, Polymer, Elm",
         "Build Tools (NPM, Webpack, Babel, Grunt, Gulp, Browserify)",
         "Testing (PHPUnit, Jasmine, Mocha, Karma, Protractor, NightwatchJS, CasperJS, Sinon, Behat, Selenium)",
         "PHP5, Hack/HHVM",
