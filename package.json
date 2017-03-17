@@ -54,7 +54,7 @@
     "nodemon": "^1.9.1",
     "react-addons-test-utils": "^15.0.0",
     "react-transform-hmr": "^1.0.4",
-    "selenium-standalone": "^5.1.0",
+    "selenium-standalone": "^6.1.0",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.2",
     "stylus-loader": "^2.0.0",
