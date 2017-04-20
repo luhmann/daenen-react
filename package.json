@@ -69,7 +69,7 @@
     "express": "^4.13.4",
     "express-robots": "^0.2.0",
     "helmet": "^2.1.0",
-    "history": "^2.0.1",
+    "history": "^4.3.0",
     "inert": "^4.0.0",
     "munge": "^0.1.4",
     "react": "^15.0.0",
