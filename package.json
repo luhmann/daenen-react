@@ -23,7 +23,7 @@
   "author": "Jan Florian Dietrich",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^6.3.5",
+    "autoprefixer": "^7.0.1",
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.4",
     "babel-eslint": "^6.0.0",
