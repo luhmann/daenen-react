@@ -1,4 +1,4 @@
-# DEPRECATED DO NOT USE: Curren project @ https://github.com/luhmann/daenen-next
+# DEPRECATED DO NOT USE: Current project @ https://github.com/luhmann/daenen-next
 ## Website for Softwarehaus Dänen4
 [![Build Status](https://travis-ci.org/luhmann/daenen-react.svg?branch=master)](https://travis-ci.org/luhmann/daenen-react)
 
